@@ -9,5 +9,7 @@ class User < ApplicationRecord
   has_many :chatrooms
   has_many :messages
 
+  validates :first_name, :last_name, :document, :phone_number, :address, presence: true
+
 
 end

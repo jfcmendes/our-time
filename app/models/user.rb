@@ -4,5 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :bookings, :reviews, :chatrooms, :messages
+  has_many :bookings
+  has_many :reviews
+  has_many :chatrooms
+  has_many :messages
+
+
 end

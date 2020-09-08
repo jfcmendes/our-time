@@ -1,12 +1,32 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar .navbar-brand .navbar-icon {
+  img {
+    width: 40px;
+  }
+}
+
+.navbar .navbar-brand {
+  h6 {
+    font-weight: 700;
+  }
+}
+
+.navbar .nav-item .login {
+  background: $light-blue;
+  color: white;
+  border-radius: 20px;
+}
+
+.navbar .nav-item .signup {
+  background: $blue;
+  color: white;
+  border-radius: 20px;
 }

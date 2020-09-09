@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :messages
   has_one :teacher
 
+<<<<<<< HEAD
   def my_chatrooms
     if teacher.present?
       Chatroom.where(teacher_id: teacher.id)
@@ -17,5 +18,9 @@ class User < ApplicationRecord
       chatrooms
     end
   end
+=======
+  validates :first_name, :last_name, :document, :phone_number, :address, presence: true
+
+>>>>>>> 50ee774bc8745f35a5442126039550b4fef52ca1
 
 end

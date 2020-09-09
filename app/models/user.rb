@@ -8,6 +8,14 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :chatrooms
   has_many :messages
+  has_one :teacher
 
+  def my_chatrooms
+    if teacher.present?
+      Chatroom.where(teacher_id: teacher.id)
+    else
+      chatrooms
+    end
+  end
 
 end

@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Chatroom.destroy_all
 Teacher.destroy_all
 User.destroy_all
 
 # USER SEED
 
-biancaferreira = User.create!(email: "biancaferreiralp@gmail.com", password: "123456", first_name: "Bianca",
-             last_name: "Ferreira", document: "01234567901", phone_number:"(21)", address: "Jacarepagua")
+biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000', 
+                          address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', 
+                          password: '123456');
 
 joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
              last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Botafogo")

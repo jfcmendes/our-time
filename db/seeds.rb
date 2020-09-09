@@ -27,9 +27,12 @@ berenicemahe = User.create!(email: "berenice.mahe@gmail.com", password: "bonjour
 
 bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: "yoga", description: "yoga teacher", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km")
+biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: "yoga", description: "yoga teacher", max_students: 4,
+                  price: 50, fee: 5, max_distance: "10km")
 
 
 # CHATROOM SEED
 chatroomone = Chatroom.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id)
+chatroomtwo = Chatroom.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id)
 
 # MESSAGE SEED

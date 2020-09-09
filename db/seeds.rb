@@ -15,6 +15,7 @@ User.destroy_all
 biancaferreira = User.create!(email: "biancaferreiralp@gmail.com", password: "123456", first_name: "Bianca",
              last_name: "Ferreira", document: "01234567901", phone_number:"(21)", address: "Jacarepagua")
 
+
 joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
              last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Botafogo")
 
@@ -34,7 +35,7 @@ chatroomone = Chatroom.create!(user_id: joaofelipe.id, teacher_id: bereniceteach
 # MESSAGE SEED
 =======
 
-biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000', 
-                          address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', 
+biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000',
+                          address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com',
                           password: '123456');
 >>>>>>> 50ee774bc8745f35a5442126039550b4fef52ca1

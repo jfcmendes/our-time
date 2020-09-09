@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+
+.banner-one {
+  display: flex;
+  width: 100%;
+  height: 91vh;
+}
+
+.header-one {
+  display: flex;
+  width: 50%;
+  height: 91vh;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+    color: $light-blue;
+  }
+  p {
+    padding-top: 10px;
+    font-weight: 300;
+    width: 400px;
+  }
+}
+
+.image-one img {
+  position: absolute;
+  width: 50%;
+  max-height: 91vh;
+  object-fit: cover;
+  object-position: center 80%;
+}
+
+.container-two {
+  width: auto;
+}
+
+.banner-two {
+  display: flex;
+  width: 100%;
+  height: 91vh;
+  justify-content: space-between;
+}
+
+.header-two {
+  display: flex;
+  width: 35%;
+  height: 91vh;
+  align-items: center;
+  position: relative;
+  padding-right: 15%;
+  h2 {
+    font-size: 30px;
+    color: $pink;
+    line-height: 1.5;
+  }
+}
+
+.image-two img {
+  position: absolute;
+  width: 50%;
+  height: 91vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-three img {
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: center 70%;
+}

@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 Chatroom.destroy_all
 Teacher.destroy_all
 User.destroy_all
 
 # USER SEED
 
-biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000', 
-                          address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', 
+biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000',
+                          address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com',
                           password: '123456');
+
 
 joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
              last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Botafogo")
@@ -27,9 +27,12 @@ berenicemahe = User.create!(email: "berenice.mahe@gmail.com", password: "bonjour
 
 bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: "yoga", description: "yoga teacher", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km")
+biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: "yoga", description: "yoga teacher", max_students: 4,
+                  price: 50, fee: 5, max_distance: "10km")
 
 
 # CHATROOM SEED
 chatroomone = Chatroom.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id)
+chatroomtwo = Chatroom.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id)
 
 # MESSAGE SEED

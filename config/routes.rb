@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :chatrooms, only: [:index, :show, :new, :create] do
+
+  resources :users, only: :show
     resources :messages, only: :create
   end
 

@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_181634) do
     t.string "day"
     t.string "hour"
     t.string "price"
-    t.integer "students_number"
-    t.string "speciality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"

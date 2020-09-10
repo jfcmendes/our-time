@@ -3,6 +3,6 @@
 <p>INFORMATION</p>
 <p><b>E-mail:</b> <%= @user.email.downcase %></p>
 <p><b>Gender:</b> <%= @user.gender %></p>
-<p><b>Address:</b> <%= @user.address.capitalize %></p>
+<p><b>Address:</b> <%= @user.address %></p>
 
-<%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-info" %>
+<%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>

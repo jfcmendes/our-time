@@ -20,7 +20,7 @@
     <%= f.input :gender, collection: User::GENDER %>
     <%= f.input :document %>
     <%= f.input :phone_number %>
-    <%= f.input :address %>
+    <%= f.input :address, input_html: {id: "location"} %>
 
   </div>
 

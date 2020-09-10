@@ -23,6 +23,7 @@
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+    <%= f.input :gender, collection: User::GENDER %>
     <%= f.input :document, disabled: true %>
     <%= f.input :phone_number %>
     <%= f.input :address %>

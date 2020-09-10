@@ -17,6 +17,7 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+    <%= f.input :gender, collection: User::GENDER %>
     <%= f.input :document %>
     <%= f.input :phone_number %>
     <%= f.input :address %>

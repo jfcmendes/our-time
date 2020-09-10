@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :chatrooms, only: [:index, :show, :new, :create] do
-    resources :users, only: :show
-      resources :messages, only: :create
+    resources :messages, only: :create
   end
+  
+  resources :teachers, only: [:index, :show, :new, :create, :edit, :update]
 
   resources :users, only: :show
-  resources :teachers
 end

@@ -1,0 +1,42 @@
+<%= simple_form_for(@teacher) do |f| %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-md-4 m-3">
+        <h2 class="text-center text-info mb-4">Edit your teaching profile</h2>
+        <div class="pb-4">
+          <%= f.input :speciality, include_hidden: false, as: :check_boxes, collection: Teacher::SPECIALITY %>
+        </div>
+        <div class="pb-4">
+          <%= f.input :description, placeholder: "Tell us about your techniques" %>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="pb-4">
+              <%= f.input :price, label: "Fixed price per class", placeholder: "0" %>
+            </div>
+          </div>
+          <div class="col">
+            <div class="pb-4">
+              <%= f.input :fee, label: "Fee per student in class", placeholder: "0" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="pb-4">
+              <%= f.input :max_students, label: "Max students per class", placeholder: "0" %>
+            </div>
+          </div>
+          <div class="col">
+            <div class="pb-4">
+              <%= f.input :max_distance, label: "Max distance from your address", placeholder: "3km" %>
+            </div>
+          </div>
+        </div>
+        <div class="pb-5 mb-4">
+          <%= f.submit "Update", class: "btn btn-info btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

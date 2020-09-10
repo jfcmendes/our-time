@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
+
+<p>INFORMATION</p>
+<p><b>E-mail:</b> <%= @user.email.downcase %></p>
+<p><b>Gender:</b> <%= @user.gender %></p>
+<p><b>Address:</b> <%= @user.address.capitalize %></p>
+
+<%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-info" %>

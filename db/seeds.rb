@@ -12,6 +12,7 @@ Booking.destroy_all
 
 # USER SEED
 
+
 biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000',
                 address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', password: '123456');
 
@@ -19,7 +20,7 @@ joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "hellow
              last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Tijuca")
 
 berenicemahe = User.create!(email: "berenice.mahe@gmail.com", password: "bonjour", first_name: "Bérénice",
-             last_name: "Mahé", document: "01234567901", phone_number:"(21)", address: "Gloria")
+             last_name: "Mahé", document: "01234567901", phone_number:"(21)", address: "Gloria", gender: "Female")
 
 alicecampos = User.create!(email: "alice.campos@gmail.com", password: "bonjour", first_name: "Alice",
              last_name: "Campos", document: "01234567901", phone_number:"(21)", address: "Botafogo")

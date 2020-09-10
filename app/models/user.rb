@@ -9,8 +9,11 @@ class User < ApplicationRecord
   has_many :chatrooms
   has_many :messages
   has_one :teacher
+  
+  GENDER = ["Female", "Male"]
 
-  validates :first_name, :last_name, :document, :phone_number, :address, presence: true
+  validates :first_name, :last_name, :document, :phone_number, :address, :gender, presence: true
+  validates :gender, inclusion: { in: GENDER }
 
   def my_chatrooms
     if teacher.present?

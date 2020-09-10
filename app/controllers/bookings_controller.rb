@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     if @booking.update(booking_params)
-      { redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated' }
+      redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated'
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     @booking.destroy
-    { redirect_to booking_path, notice: 'Your booking is successfully canceled.' }
+    redirect_to booking_path, notice: 'Your booking is successfully canceled.'
   end
 
   def product_params

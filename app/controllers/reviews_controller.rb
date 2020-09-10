@@ -17,8 +17,3 @@ class ReviewsController < ApplicationController
     end
   end
 end
-
-
-
-
-review.booking.teacher

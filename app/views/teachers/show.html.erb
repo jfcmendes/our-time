@@ -4,7 +4,9 @@
 <p>PERSONAL</p>
 <p><b>E-mail:</b> <%= @teacher.user.email.downcase %></p>
 <p><b>Gender:</b> <%= @teacher.user.gender %></p>
-<p><b>Location:</b> <%= @teacher.user.address.capitalize %></p>
+<p><b>Location:</b> <%= @teacher.user.address %></p>
+
+<%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
 
 <p>TEACHING</p>
 <p><b>Specialities:</b></p>
@@ -20,5 +22,4 @@
 
 <p>Edit your profile:</p>
 
-<%= link_to "Personal Info", edit_user_registration_path, class: "btn btn-outline-info" %>
-<%= link_to "Teaching Info", edit_teacher_path, class: "btn btn-outline-info" %>
+<%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>

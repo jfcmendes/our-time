@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
-  get 'bookings/create'
-  get 'bookings/new'
-  get 'bookings/index'
-  get 'bookings/edit'
-  get 'bookings/update'
 
   devise_for :users
   root to: 'pages#home'
 
+  resources :bookings, only: [:create, :new, :index, :edit, :update] do
+      resources :reviews, only: [:new, :create]
+  end
 
   resources :chatrooms, only: [:index, :show, :new, :create] do
-
-  resources :users, only: :show
-    resources :messages, only: :create
+    resources :users, only: :show
+      resources :messages, only: :create
   end
 
   resources :users, only: :show
   resources :teachers
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

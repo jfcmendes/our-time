@@ -2,5 +2,5 @@ class Booking < ApplicationRecord
   belongs_to :teacher
   belongs_to :user
 
-  validates :day, :hour, :price, :students_number, :speciality, presence: true
+  validates :day, :hour, :price, presence: true
 end

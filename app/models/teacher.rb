@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
   belongs_to :user
+  has_many :reviews
 
   SPECIALITY = ["Yoga", "Meditation", "Sophrology"]
   validates :speciality, :description, :max_students, :price, :fee, :max_distance, presence: true

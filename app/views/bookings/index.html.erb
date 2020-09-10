@@ -1,0 +1,7 @@
+<% @bookings.each do |booking| %>
+<div class="booking-container" id="booking-<%= booking.id %>">
+  <i class="author">
+    <span><%= "#{booking.day} #{booking.hour}" %></span>
+  </i>
+</div>
+<% end %>

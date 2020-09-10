@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'reviews/new'
-  get 'reviews/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -16,6 +14,4 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
   resources :teachers
-
-
 end

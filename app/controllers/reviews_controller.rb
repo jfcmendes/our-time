@@ -17,8 +17,3 @@ class ReviewsController < ApplicationController
     end
   end
 end
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8fbe2cd0c6914dfbda1645f277f0f95b56bffe85

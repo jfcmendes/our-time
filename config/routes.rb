@@ -4,13 +4,10 @@ Rails.application.routes.draw do
   get 'bookings/index'
   get 'bookings/edit'
   get 'bookings/update'
-  devise_for :users
-  root to: 'pages#home'
-
-
 
   devise_for :users
   root to: 'pages#home'
+
 
   resources :chatrooms, only: [:index, :show, :new, :create] do
 

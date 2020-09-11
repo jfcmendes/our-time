@@ -1,7 +1,13 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.create(booking_params)
-    redirect_to bookings_path
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def new
@@ -33,8 +39,10 @@ class BookingsController < ApplicationController
     redirect_to booking_path, notice: 'Your booking is successfully canceled.'
   end
 
-  def product_params
-    params.require(:booking).permit(:teacher_id, :user_id, :day, :hour, :price, :students_number, :speciality)
+  private 
+
+  def booking_params
+    params.require(:booking).permit(:teacher_id, :day, :hour, :price, :students_number, :speciality)
   end
 end
 

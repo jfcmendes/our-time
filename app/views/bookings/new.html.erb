@@ -1,2 +1,15 @@
-<h1>Bookings#create</h1>
-<p>Find me in app/views/bookings/create.html.erb</p>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :day %>
+  <%= f.input :hour %>
+  <%= f.submit %> 
+<% end %>
+
+
+
+<%= simple_form_for(Booking.new) do |f| %>
+  <%= f.input :day %>
+  <%= f.input :hour %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.submit %> 
+<% end %>

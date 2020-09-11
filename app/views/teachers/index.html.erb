@@ -1,31 +1,25 @@
-<div class="container">
+<div class="container boxes">
   <% @teachers.each do |teacher| %>
     <div class="row justify-content-between">
       <div class="col-7 mr-2 mb-3 " >
         <div class="card-deck">
           <div class="row justify-content-between">
             <div class="col-4">
-              <%= teacher.user.first_name %>
+              <strong><%= "#{teacher.user.first_name} #{teacher.user.last_name} - #{teacher.speciality[0]}"%></strong>
             </div>
-            <div class="col-8">
-              <%= teacher.speciality %>
+            <br>
+            <div>
+              <span><%= teacher.description %></span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-4" style="visibility: hidden">
         <div class="card-deck">
-          <span class="disabled">aaaaasassdasd</span>
+          <span class="disabled"></span>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-
-
-
-

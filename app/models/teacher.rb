@@ -1,7 +1,11 @@
 class Teacher < ApplicationRecord
   belongs_to :user
   has_many :reviews
+
+  has_one_attached :photo
+
   has_many :booking, dependent: :destroy
+
 
   SPECIALITY = ["Yoga", "Meditation", "Sophrology"]
   validates :speciality, :description, :max_students, :price, :fee, :max_distance, presence: true

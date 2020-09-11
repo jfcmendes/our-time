@@ -14,40 +14,40 @@ Booking.destroy_all
 
 
 biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000',
-                address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', password: '123456');
+                address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', password: '123456', gender: "Female");
 
 joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "helloworld", first_name: "Joao Felipe",
-             last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Tijuca")
+             last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Tijuca", gender: "Male")
 
 berenicemahe = User.create!(email: "berenice.mahe@gmail.com", password: "bonjour", first_name: "Bérénice",
              last_name: "Mahé", document: "01234567901", phone_number:"(21)", address: "Gloria", gender: "Female")
 
 alicecampos = User.create!(email: "alice.campos@gmail.com", password: "bonjour", first_name: "Alice",
-             last_name: "Campos", document: "01234567901", phone_number:"(21)", address: "Botafogo")
+             last_name: "Campos", document: "01234567901", phone_number:"(21)", address: "Botafogo", gender: "Female")
 
 brunabarbosa = User.create!(email: "bruna.barbosa@gmail.com", password: "bonjour", first_name: "Bruna",
-             last_name: "Barbosa", document: "01234567901", phone_number:"(21)", address: "Leblon")
+             last_name: "Barbosa", document: "01234567901", phone_number:"(21)", address: "Leblon", gender: "Female")
 
 pedrodias = User.create!(email: "felipedias@gmail.com", password: "bonjour", first_name: "Felipe",
-             last_name: "Dias", document: "01234567901", phone_number:"(21)", address: "Botafogo")
+             last_name: "Dias", document: "01234567901", phone_number:"(21)", address: "Botafogo", gender: "Male")
 
 carmenmendes = User.create!(email: "carmenmendes@gmail.com", password: "bonjour", first_name: "Carmen",
-             last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Gloria")
+             last_name: "Mendes", document: "01234567901", phone_number:"(21)", address: "Gloria", gender: "Female")
 
 
 # TEACHER SEED
 
-bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: "Yoga", description: "yoga teacher", max_students: 4,
-                  price: 50, fee: 5, max_distance: "10km")
+bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: ["Yoga"], description: "yoga teacher", max_students: 4,
+                  price: 50, fee: 5, max_distance: "10km", diploma: "master of sport")
 
-biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: "Meditation", description: "meditation teacher", max_students: 12,
-                  price: 70, fee: 5, max_distance: "10km")
+biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Meditation"], description: "meditation teacher", max_students: 12,
+                  price: 70, fee: 5, max_distance: "10km", diploma: "bali studio diploma")
 
-pedrodias = Teacher.create!(user_id: pedrodias.id, speciality: "Yoga", description: "meditation teacher", max_students: 6,
-                  price: 40, fee: 10, max_distance: "5km")
+pedrodias = Teacher.create!(user_id: pedrodias.id, speciality: ["Yoga"], description: "meditation teacher", max_students: 6,
+                  price: 40, fee: 10, max_distance: "5km", diploma: "costa rica diploma")
 
-brunabarbosa = Teacher.create!(user_id: brunabarbosa.id, speciality: "Yoga", description: "Professional yoga teacher", max_students: 15,
-                  price: 80, fee: 0, max_distance: "5km")
+brunabarbosa = Teacher.create!(user_id: brunabarbosa.id, speciality: ["Yoga"], description: "Professional yoga teacher", max_students: 15,
+                  price: 80, fee: 0, max_distance: "5km", diploma: "official studio of Rio de Janeiro")
 
 
 # CHATROOM SEED

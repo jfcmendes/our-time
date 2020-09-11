@@ -1,15 +1,4 @@
-
 <%= simple_form_for(@booking) do |f| %>
-  <%= f.input :day %>
-  <%= f.input :hour %>
-  <%= f.submit %> 
-<% end %>
-
-
-
-<%= simple_form_for(Booking.new) do |f| %>
-  <%= f.input :day %>
-  <%= f.input :hour %>
-  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :date %>
   <%= f.submit %> 
 <% end %>

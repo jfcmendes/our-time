@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking.id)
     else
       render :new
     end
@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
   private 
 
   def booking_params
-    params.require(:booking).permit(:teacher_id, :date, :price, :students_number)
+    params.require(:booking).permit(:teacher_id, :date, :price)
   end
 end
 

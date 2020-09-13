@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'pages#home'
 
@@ -12,6 +11,8 @@ Rails.application.routes.draw do
   end
   
   resources :teachers, only: [:index, :show, :new, :create, :edit, :update]
+
+  resources :teacher_availabilities, only: [:new, :create]
 
   resources :users, only: :show
 end

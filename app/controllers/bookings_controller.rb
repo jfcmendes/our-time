@@ -4,51 +4,46 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new
   end
   
   def create
+    @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.update(date_params)
 
     if @booking.save
-      redirect_to booking_path(@booking.id)
+      redirect_to teacher_booking_path(booking.id)
     else
       render :new
     end
   end
 
-  def edit
-    @booking = Booking.find(params[:id])
-  end
+  # def edit
+  #  @booking = Booking.find(params[:id])
+  # end
 
-  def update
-    @booking = Booking.find(params[:id])
+  # def update
+  #  @booking = Booking.find(params[:id])
 
-    if @booking.update(booking_params)
-      redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated!'
-    else
-      render :edit
-    end
-  end
+  #  if @booking.update(booking_params)
+  #    redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated!'
+  #  else
+  #    render :edit
+  #  end
+  # end
 
-  def destroy
-    @booking = Booking.find(params[:id])
+  # def destroy
+  #  @booking = Booking.find(params[:id])
 
-    @booking.destroy
-    redirect_to booking_path, notice: 'Your booking is successfully canceled.'
-  end
+  #  @booking.destroy
+  #  redirect_to booking_path, notice: 'Your booking is successfully canceled.'
+  #end
 
   private 
 
-  def date_params
-    params[:booking][:date] = params[:booking][:date].to_datetime
-    params.require(:booking).permit(:date)
-  end
-
   def booking_params
-    params.require(:booking).permit(:teacher_id, :students_number)
+    params.require(:booking).permit(:day, :hour, :students_number)
   end
 end
 

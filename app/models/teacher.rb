@@ -1,6 +1,7 @@
 class Teacher < ApplicationRecord
   belongs_to :user
   has_many :reviews
+  has_many :teacher_availabilities
 
   has_one_attached :photo
 

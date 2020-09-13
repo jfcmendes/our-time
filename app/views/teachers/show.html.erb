@@ -23,3 +23,13 @@
 <p>Edit your profile:</p>
 
 <%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>
+
+<p><b>Availabilities:</b></p>
+
+<% @teacher.teacher_availabilities.each do |teacher_availability| %>
+  <p><b><%= teacher_availability.day %>:</b> <%= teacher_availability.start_time %> - <%= teacher_availability.end_time %>
+  <%= link_to "x", teacher_availability_path(teacher_availability), method: :delete %>
+  </p>
+<% end %>
+
+<%= link_to "Add new", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>

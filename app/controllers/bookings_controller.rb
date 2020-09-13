@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.update(date_params)
 
-    raise
     if @booking.save
       redirect_to booking_path(@booking.id)
     else

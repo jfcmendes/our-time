@@ -1,9 +1,18 @@
-<% @chatrooms.each do |chatroom| %>
-<div class="chatroom-container" id="chatroom-<%= chatroom.id %>">
-  <i class="author">
-    <span><%= "#{chatroom.user.first_name} #{chatroom.user.last_name}" %></span>
-    <small><%= chatroom.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-<!--  <p>pe message.content pe</p> -->
+
+<div class="container">
+  <h1 class="highlight">Mailbox</h1>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class=”list-group”>
+        <div class=”list-group-item”>
+          <% @chatrooms.each do |chatroom| %>
+            <span><%= "#{chatroom.user.first_name} #{chatroom.user.last_name}" %></span>
+            <small><%= chatroom.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>

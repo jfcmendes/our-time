@@ -6,6 +6,14 @@ class BookingsController < ApplicationController
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new
+
+    @days = @teacher.teacher_availabilities.map do |t|
+      t.day
+    end
+
+    @hours = @teacher.teacher_availabilities.map do |t|
+      "#{t.start_time} - #{t.end_time}"
+    end
   end
   
   def create

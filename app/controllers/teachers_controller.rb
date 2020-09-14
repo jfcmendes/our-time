@@ -43,6 +43,6 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:description, :price, :fee, :max_students, :max_distance, speciality: [])
+    params.require(:teacher).permit(:description, :price, :fee, :max_students, :max_distance, :photo, speciality: [])
   end
 end

@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Booking.destroy_all
 Chatroom.destroy_all
 Teacher.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 # USER SEED
 
@@ -37,16 +37,16 @@ carmenmendes = User.create!(email: "carmenmendes@gmail.com", password: "bonjour"
 
 # TEACHER SEED
 
-bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: ["Yoga"], description: "yoga teacher", max_students: 4,
+bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: ["Yoga"], description: "After have been studying yoga in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km", diploma: "master of sport")
 
-biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Meditation"], description: "meditation teacher", max_students: 12,
+biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Meditation"], description: "After have been studying meditation in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 12,
                   price: 70, fee: 5, max_distance: "10km", diploma: "bali studio diploma")
 
-pedrodias = Teacher.create!(user_id: pedrodias.id, speciality: ["Yoga"], description: "meditation teacher", max_students: 6,
+pedrodias = Teacher.create!(user_id: pedrodias.id, speciality: ["Yoga"], description: "After have been studying yoga in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 6,
                   price: 40, fee: 10, max_distance: "5km", diploma: "costa rica diploma")
 
-brunabarbosa = Teacher.create!(user_id: brunabarbosa.id, speciality: ["Yoga"], description: "Professional yoga teacher", max_students: 15,
+brunabarbosa = Teacher.create!(user_id: brunabarbosa.id, speciality: ["Yoga"], description: "After have been studying yoga in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 15,
                   price: 80, fee: 0, max_distance: "5km", diploma: "official studio of Rio de Janeiro")
 
 

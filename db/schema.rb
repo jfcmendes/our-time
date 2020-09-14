@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 2020_09_10_194348) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "teacher_id", null: false
     t.bigint "user_id", null: false
-    t.string "day"
-    t.string "hour"
     t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "date"
+    t.integer "students_number"
     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

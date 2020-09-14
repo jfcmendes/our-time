@@ -1,15 +1,22 @@
 class BookingsController < ApplicationController
-  def create
-    @booking = Booking.create(booking_params)
-    redirect_to bookings_path
+  def index
+    @bookings = Booking.all
   end
 
   def new
     @booking = Booking.new
   end
+  
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.update(date_params)
 
-  def index
-    @bookings = Booking.all
+    if @booking.save
+      redirect_to booking_path(@booking.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -20,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated'
+      redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated!'
     else
       render :edit
     end
@@ -33,8 +40,15 @@ class BookingsController < ApplicationController
     redirect_to booking_path, notice: 'Your booking is successfully canceled.'
   end
 
-  def product_params
-    params.require(:booking).permit(:teacher_id, :user_id, :day, :hour, :price, :students_number, :speciality)
+  private 
+
+  def date_params
+    params[:booking][:date] = params[:booking][:date].to_datetime
+    params.require(:booking).permit(:date)
+  end
+
+  def booking_params
+    params.require(:booking).permit(:teacher_id, :students_number)
   end
 end
 

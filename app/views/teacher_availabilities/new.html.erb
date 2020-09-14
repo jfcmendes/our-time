@@ -1,0 +1,8 @@
+<h2>When are you available to teach?</h2>
+
+<%= simple_form_for [@teacher, @teacher_availability] do |f| %>
+  <%= f.input :day, as: :date %>
+  <%= f.input :start_time, as: :time %>
+  <%= f.input :end_time, as: :time %>
+  <%= f.submit 'Add' %> 
+<% end %>

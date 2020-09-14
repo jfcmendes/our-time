@@ -1,2 +1,7 @@
-<h1>Bookings#create</h1>
-<p>Find me in app/views/bookings/create.html.erb</p>
+<h2>Book a new class</h2>
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :students_number %>
+  <%= f.input :date, collection: Teacher.first.teacher_availabilities %>
+  <%= f.submit %> 
+<% end %>

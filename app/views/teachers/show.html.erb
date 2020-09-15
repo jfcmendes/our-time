@@ -25,10 +25,13 @@
 
 <p><b>Availabilities:</b></p>
 
-<% @teacher.teacher_availabilities.each do |teacher_availability| %>
-  <p><b><%= teacher_availability.day %>:</b> <%= teacher_availability.start_time %> - <%= teacher_availability.end_time %>
-  <%= link_to "x", teacher_availability_path(teacher_availability), method: :delete %>
-  </p>
-<% end %>
+<div class="card">
+    <% @availabilities_by_date.each do |key, value| %>
+      <h3><%= key %></h3>
+      <% value.each do |i| %>
+        <%= "#{i.start_time} - #{i.end_time}" %> <%= link_to "Delete", teacher_availability_path(i), method: :delete %>
+      <% end %> 
+    <% end %>
+</div>
 
 <%= link_to "Add new availability", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>

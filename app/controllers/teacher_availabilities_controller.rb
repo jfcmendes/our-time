@@ -2,10 +2,6 @@ class TeacherAvailabilitiesController < ApplicationController
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @teacher_availability = TeacherAvailability.new
-
-    @availabledays = @teacher.teacher_availabilities.map do |t|
-      t.day
-    end
   end
 
   def create

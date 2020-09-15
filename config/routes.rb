@@ -9,9 +9,17 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :teacher_availabilities, only: [:new, :create]
     resources :bookings, only: [:create, :new, :index, :edit, :update, :show] do
-      resources :reviews, only: [:new, :create]
+     resources :reviews, only: [:new, :create]
     end
   end
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
+  resources :orders, only: [:show, :create]
+
+  resources :bookings, only: :show
 
   resources :reviews, only: :destroy
 

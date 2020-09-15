@@ -5,3 +5,10 @@
 </p>
 
 <li>  <%=link_to "Leave a review",  new_booking_review_path(@booking)%></li>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'booking_id', @booking.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
+

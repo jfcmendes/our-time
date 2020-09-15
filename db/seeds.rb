@@ -59,9 +59,9 @@ chatroomtwo = Chatroom.create!(user_id: joaofelipe.id, teacher_id: biancateacher
 
 # BOOKING SEED
 
-bookingone = Booking.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id, date: "23-09-2020 13:00", price: "75")
+bookingone = Booking.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id, day: "23-09-2020", hour: "13:00", price: "75", students_number: 6)
 
-bookingtwo = Booking.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id, date: "24-09-2020 14:00", price: "65")
+bookingtwo = Booking.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id, day: "24-09-2020", hour: "14:00", price: "85", students_number: 4)
 
 
 # MESSAGE SEED

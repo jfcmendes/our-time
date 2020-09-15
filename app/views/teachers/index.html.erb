@@ -1,31 +1,29 @@
-<div class="container">
+<div class="container boxes">
   <% @teachers.each do |teacher| %>
     <div class="row justify-content-between">
-      <div class="col-7 mr-2 mb-3 " >
-        <div class="card-deck">
+      <div class="col-7 mr-2 mb-3 card-deck teacher-card" >
           <div class="row justify-content-between">
             <div class="col-4">
-              <%= teacher.user.first_name %>
+              <% if teacher.photo.attached? %>
+                <%= cl_image_tag teacher.photo.key, class: "teacher-avatar" %>
+              <% else %>
+                <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
+              <% end %>
+
+              <strong><%= "#{teacher.user.first_name} #{teacher.user.last_name} - #{teacher.speciality[0]}"%></strong>
             </div>
-            <div class="col-8">
-              <%= teacher.speciality %>
+            <br>
+            <div>
+              <span><%= teacher.description %></span>
             </div>
           </div>
-        </div>
       </div>
 
-      <div class="col-4">
-        <div class="card-deck">
-          <span class="disabled">aaaaasassdasd</span>
-        </div>
+
+      <div class="col-4 card-deck ninja-card">
+          <span class="disabled"></span>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-
-
-
 

@@ -17,6 +17,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import "../plugins/flatpickr"
+
+import { teacherCards } from "../channels/hidden_cards_teachers"
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇

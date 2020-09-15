@@ -1,8 +1,22 @@
-<h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
+<div class="container">
+  <div class="row justify-content">
+    <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "square", data: {toggle: "dropdown"} %>
+    <% else %>
+        <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
+    <% end %>
+    <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"%></h2>
+  </div>
+</div>
 
-<p>INFORMATION</p>
-<p><b>E-mail:</b> <%= @user.email.downcase %></p>
-<p><b>Gender:</b> <%= @user.gender %></p>
-<p><b>Address:</b> <%= @user.address %></p>
+<div class="container">
+  <div class="col justify-content">
+    <p>INFORMATION</p>
+    <p><b>E-mail:</b> <%= @user.email.downcase %></p>
+    <p><b>Gender:</b> <%= @user.gender %></p>
+    <p><b>Address:</b> <%= @user.address %></p>
+    <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+  </div>
+</div>
 
-<%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+

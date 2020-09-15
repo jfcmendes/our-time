@@ -1,3 +1,5 @@
-<% @bookings.each do |booking| %>
-  <li><%= @booking.date @booking.students_number %></li>
+<h2>Bookings</h2>
+
+<% current_user.bookings.each do |booking| %>
+  <p><b><%= booking.day %></b>, <%= booking.hour %>, <%= booking.students_number %> students - <%= booking.user.address %></p>
 <% end %>

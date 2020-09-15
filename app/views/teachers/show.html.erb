@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<%= link_to "Book Now", new_teacher_booking_path(@teacher.id), class: "btn btn-outline-info" %>
+
 <div class="container">
   <div class="col justify-content" mt-3>
     <h2><%= "#{@teacher.user.first_name} #{@teacher.user.last_name}" %></h2>
@@ -21,7 +23,7 @@
 
     <p>TEACHING</p>
     <p><b>Specialities:</b></p>
-
+    
     <p><% @teacher.speciality.each do |speciality|%>
       <li><%= speciality %></li>
     <% end %></p>
@@ -31,21 +33,19 @@
     <p><b>Fixed price:</b> USD <%= @teacher.price %>,00</p>
     <p><b>Fee per student in class:</b> USD <%= @teacher.fee %>,00</p>
 
-    <p>Edit your profile:</p>
-
     <%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>
 
-
-
-
     <p><b>Availabilities:</b></p>
+  
+    <div class="card">
+      <% @availabilities_by_date.each do |key, value| %>
+        <h3><%= key %></h3>
+        <% value.each do |i| %>
+          <%= "#{i.start_time} - #{i.end_time}" %> <%= link_to "Delete", teacher_availability_path(i), method: :delete %>
+        <% end %> 
+      <% end %>
+    </div>
 
-    <% @teacher.teacher_availabilities.each do |teacher_availability| %>
-      <p><b><%= teacher_availability.day %>:</b> <%= teacher_availability.start_time %> - <%= teacher_availability.end_time %>
-      <%= link_to "x", teacher_availability_path(teacher_availability), method: :delete %>
-      </p>
-    <% end %>
-
-    <%= link_to "Add new", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
-   </div>
+    <%= link_to "Add new availability", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
   </div>
+ </div>

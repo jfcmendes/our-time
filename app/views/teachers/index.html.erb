@@ -9,9 +9,11 @@
               <% else %>
                 <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
               <% end %>
-
               <strong><%= "#{teacher.user.first_name} #{teacher.user.last_name} - #{teacher.speciality[0]}"%></strong>
             </div>
+            <% teacher.speciality.each do |speciality| %>
+              <%= speciality %>
+            <% end %>
             <br>
             <div>
               <span><%= teacher.description %></span>

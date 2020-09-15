@@ -1,1 +1,7 @@
-<p>Booking id</p>
+<strong>Date:</strong>
+  <%= @booking.date%>
+<p> <strong>Price:</strong>
+  <%= @booking.price%>
+</p>
+
+<li>  <%=link_to "Leave a review",  new_booking_review_path(@booking)%></li>

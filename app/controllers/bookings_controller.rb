@@ -3,6 +3,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new
@@ -15,7 +19,7 @@ class BookingsController < ApplicationController
       "#{t.start_time} - #{t.end_time}"
     end
   end
-  
+
   def create
     @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new(booking_params)
@@ -48,7 +52,7 @@ class BookingsController < ApplicationController
   #  redirect_to booking_path, notice: 'Your booking is successfully canceled.'
   #end
 
-  private 
+  private
 
   def booking_params
     params.require(:booking).permit(:day, :hour, :students_number)

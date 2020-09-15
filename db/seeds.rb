@@ -40,7 +40,7 @@ carmenmendes = User.create!(email: "carmenmendes@gmail.com", password: "bonjour"
 bereniceteacher = Teacher.create!(user_id: berenicemahe.id, speciality: ["Yoga"], description: "After have been studying yoga in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km", diploma: "master of sport")
 
-biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Meditation"], description: "After have been studying meditation in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 12,
+biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Meditation", "Yoga"], description: "After have been studying meditation in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 12,
                   price: 70, fee: 5, max_distance: "10km", diploma: "bali studio diploma")
 
 pedrodias = Teacher.create!(user_id: pedrodias.id, speciality: ["Yoga"], description: "After have been studying yoga in Bali and teaching in several studios accross Europe and Costa Rica, I am back to my hometown, to share it with carioca people.", max_students: 6,
@@ -59,6 +59,17 @@ chatroomtwo = Chatroom.create!(user_id: joaofelipe.id, teacher_id: biancateacher
 
 # BOOKING SEED
 
-bookingone = Booking.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id, day: "23rd September 2020", hour: "13h00", price: "75")
+bookingone = Booking.create!(user_id: joaofelipe.id, teacher_id: bereniceteacher.id, date: "23-09-2020 13:00", price: "75")
 
-bookingtwo = Booking.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id, day: "30 September 2020", hour: "14h00", price: "65")
+bookingtwo = Booking.create!(user_id: joaofelipe.id, teacher_id: biancateacher.id, date: "24-09-2020 14:00", price: "65")
+
+
+# MESSAGE SEED
+
+messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: berenicemahe.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
+
+
+# REVIEW SEED
+
+reviewone = Review.create!(booking_id: bookingone.id, user_id: joaofelipe.id, rating: "5", content: "Bérénice has been a wonderful teacher, and helped each of us with care. I recommand her as your teacher!")
+

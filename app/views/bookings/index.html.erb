@@ -1,5 +1,3 @@
-<h2>Bookings</h2>
-
-<% current_user.bookings.each do |booking| %>
-  <p><b><%= booking.day %></b>, <%= booking.hour %>, <%= booking.students_number %> students - <%= booking.user.address %></p>
+<% @bookings.each do |booking| %>
+  <li>  <%=link_to booking.date, booking_path(booking)%></li>
 <% end %>

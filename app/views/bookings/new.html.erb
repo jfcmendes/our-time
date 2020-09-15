@@ -1,8 +1,40 @@
-<h2>Book a new class</h2>
-
 <%= simple_form_for [@teacher, @booking] do |f| %>
-  <%= f.input :day, collection: @days %>
-  <%= f.input :hour, collection: @hours %>
-  <%= f.input :students_number %>
-  <%= f.submit %> 
+  <%= f.error_notification %>
+  <div class="contrainer pt-2">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-3">
+        <h2 class="text-center mb-5 devise-padding">BOOK YOUR CLASS</h2>
+        <div class="row">
+          <div class="col">
+            <div class="form-inputs">
+              <div class="row">
+                <div class="col">
+                  <div class="pb-3">
+                    <%= f.input :day, collection: @days %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="pb-3">
+                    <%= f.input :hour, collection: @hours %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="pb-3">
+                    <%= f.input :students_number %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions mb-4">
+          <%= f.submit "Go to checkout", class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

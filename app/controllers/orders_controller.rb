@@ -3,12 +3,11 @@ class OrdersController < ApplicationController
   def create
     booking = Booking.find(params[:booking_id])
     order  = Order.create!(booking: booking, booking_sku: booking.sku, amount: booking.price, state: 'pending', user: current_user)
-
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
       name: booking.sku,
-      images: [booking.photo_url],
+      #images: [booking.teacher.photo.service_url],
       amount: booking.price_cents,
       currency: 'usd',
       quantity: 1

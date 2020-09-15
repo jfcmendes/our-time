@@ -4,7 +4,6 @@
   <%= @booking.price%>
 </p>
 
-<li>  <%=link_to "Leave a review",  new_booking_review_path(@booking)%></li>
 
 <%= form_tag orders_path do %>
   <%= hidden_field_tag 'booking_id', @booking.id %>

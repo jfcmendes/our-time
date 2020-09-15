@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:show, :create]
 
-
+  resources :bookings, only: :show
 
   resources :reviews, only: :destroy
 

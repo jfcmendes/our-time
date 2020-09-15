@@ -7,6 +7,8 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+
+    @availabilities_by_date = @teacher.teacher_availabilities.group_by { |availability| availability.day }
   end
 
   def new

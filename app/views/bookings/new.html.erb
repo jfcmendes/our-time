@@ -3,6 +3,6 @@
 <%= simple_form_for [@teacher, @booking] do |f| %>
   <%= f.input :day, collection: @days %>
   <%= f.input :hour, collection: @hours %>
-  <%= f.input :students_number %>
+  <%= f.input :students_number, collection: (1..@teacher.max_students) %>
   <%= f.submit %> 
 <% end %>

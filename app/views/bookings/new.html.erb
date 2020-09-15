@@ -1,7 +1,8 @@
 <h2>Book a new class</h2>
 
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for [@teacher, @booking] do |f| %>
+  <%= f.input :day, collection: @days %>
+  <%= f.input :hour, collection: @hours %>
   <%= f.input :students_number %>
-  <%= f.input :date, collection: Teacher.first.teacher_availabilities %>
   <%= f.submit %> 
 <% end %>

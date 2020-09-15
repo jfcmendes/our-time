@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2020_09_14_152236) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "date"
+    t.integer "students_number"
+    t.string "day"
+    t.string "hour"
     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

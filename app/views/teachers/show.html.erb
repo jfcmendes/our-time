@@ -1,35 +1,17 @@
-<h2><%= "#{@teacher.user.first_name} #{@teacher.user.last_name}" %></h2>
-
-
-<p>PERSONAL</p>
-<p><b>E-mail:</b> <%= @teacher.user.email.downcase %></p>
-<p><b>Gender:</b> <%= @teacher.user.gender %></p>
-<p><b>Location:</b> <%= @teacher.user.address %></p>
-
-<%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
-
-<p>TEACHING</p>
-<p><b>Specialities:</b></p>
-
-<p><% @teacher.speciality.each do |speciality|%>
-  <li><%= speciality %></li>
-<% end %></p>
-
-<p><b>Description:</b> <%= @teacher.description %></p>
-<p><b>Limit of students per class:</b> <%= @teacher.max_students %></p>
-<p><b>Fixed price:</b> USD <%= @teacher.price %>,00</p>
-<p><b>Fee per student in class:</b> USD <%= @teacher.fee %>,00</p>
-
-<p>Edit your profile:</p>
-
-<%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>
-
-<p><b>Availabilities:</b></p>
-
-<% @teacher.teacher_availabilities.each do |teacher_availability| %>
-  <p><b><%= teacher_availability.day %>:</b> <%= teacher_availability.start_time %> - <%= teacher_availability.end_time %>
-  <%= link_to "x", teacher_availability_path(teacher_availability), method: :delete %>
-  </p>
-<% end %>
-
-<%= link_to "Add new", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
+<h3><%= @teacher.user.first_name %> <%= @teacher.user.last_name%> -
+  <% @teacher.speciality.each do |speciality| %>
+  <%= speciality %>
+  <% end %>
+</h3>
+<br>
+<h4>Description</h4>
+  <%= @teacher.description %>
+<br>
+<hr>
+<h4>Amount of student in the class</h4>
+  <%= @teacher.max_students %>
+<br>
+<hr>
+<h4>Price</h4>
+  R$<%= @teacher.price %>
+   + R$<%= @teacher.fee %> per extra person

@@ -3,10 +3,14 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -40,7 +44,7 @@ class BookingsController < ApplicationController
     redirect_to booking_path, notice: 'Your booking is successfully canceled.'
   end
 
-  private 
+  private
 
   def date_params
     params[:booking][:date] = params[:booking][:date].to_datetime
@@ -48,7 +52,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:teacher_id, :students_number)
+    params.require(:booking).permit(:teacher_id, :user_id)
   end
 end
 

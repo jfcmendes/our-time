@@ -1,8 +1,0 @@
-<h2>Edit your booking</h2>
-
-<%= simple_form_for [@teacher, @booking] do |f| %>
-  <%= f.input :day, collection: TeacherAvailability.all %>
-  <%= f.input :hour, collection: TeacherAvailability.all %>
-  <%= f.input :students_number %>
-  <%= f.submit %> 
-<% end %>

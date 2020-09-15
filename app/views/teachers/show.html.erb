@@ -28,8 +28,8 @@
 
     <p><b>Description:</b> <%= @teacher.description %></p>
     <p><b>Limit of students per class:</b> <%= @teacher.max_students %></p>
-    <p><b>Fixed price:</b> USD <%= @teacher.price %>,00</p>
-    <p><b>Fee per student in class:</b> USD <%= @teacher.fee %>,00</p>
+    <p><b>Fixed price:</b> R$ <%= @teacher.price %>,00</p>
+    <p><b>Fee per student in class:</b> R$ <%= @teacher.fee %>,00</p>
 
     <%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>
 

@@ -5,7 +5,7 @@
 <p><b>Date:</b> <%= @booking.day %></p>
 <p><b>Hour:</b> <%= @booking.hour %></p>
 <p><b>Number of participants:</b> <%= @booking.students_number %></p>
-<p><b>Price:</b> R$ <%= (@booking.teacher.fee * @booking.students_number) + @booking.teacher.price %>,00</p>
+<p><b>Price:</b> <%= humanized_money_with_symbol @booking.price %></p>
 
 <p>TEACHER INFORMATION</p>
 

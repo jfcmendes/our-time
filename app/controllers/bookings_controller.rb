@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.teacher = @teacher
     @booking.user = current_user
+    @booking.price_cents = ((@booking.teacher.fee * 100)* @booking.students_number) + (@booking.teacher.price * 100)
 
     if @booking.save
       redirect_to booking_path(@booking.id)

@@ -66,6 +66,22 @@
                   </tbody>
                 </table>
                 <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+
+                <p><b>Rating:</b> <%= @teacher.average_rating %></p>
+
+                <p><b>Availabilities:</b></p>
+
+                <div class="card">
+                  <% @availabilities_by_date.each do |key, value| %>
+                    <h3><%= key %></h3>
+                    <% value.each do |i| %>
+                      <%= "#{i.start_time} - #{i.end_time}" %> <%= link_to "Delete", teacher_availability_path(i), method: :delete %>
+                    <% end %>
+                  <% end %>
+                  </div>
+                    <%= link_to "Add new availability", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
+                 </div>
+                </div>
               </div>
             </div>
         </div>
@@ -77,19 +93,4 @@
 
 
 
-    <p><b>Rating:</b> <%= @teacher.average_rating %></p>
 
-    <p><b>Availabilities:</b></p>
-
-    <div class="card">
-      <% @availabilities_by_date.each do |key, value| %>
-        <h3><%= key %></h3>
-        <% value.each do |i| %>
-          <%= "#{i.start_time} - #{i.end_time}" %> <%= link_to "Delete", teacher_availability_path(i), method: :delete %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <%= link_to "Add new availability", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
- </div>
-</div>

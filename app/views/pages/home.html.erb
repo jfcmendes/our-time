@@ -4,23 +4,33 @@
       <div>
         <h1>Take a break and connect with your teammates</h1>
         <form accept-charset="UTF-8" action="/teachers" method="get">
-          <div class="w-75">
-            <label for="location">Location</label>
-            <input class="" id="location" name="location" type="text"/>
+          <div class="search-card d-flex justify-content-around align-items-center">
+            <div class="card-field-one mr-4 pr-4 d-flex align-items-center">
+              <div>
+                <label class="form-label" for="class">Class</label>
+                <select class="form-control" name="class" type="text">
+                  <% Teacher::SPECIALITY.each do |speciality| %>
+                    <option value="<%= speciality %>"><%= speciality %></option>
+                  <% end %>
+                </select>
+              </div>
+            </div>
+            <div class="card-field-two mr-4 pr-4 d-flex align-items-center">
+              <div>
+                <label class="form-label" for="date">Where?</label>
+                <input class="form-control" id="location" name="location" type="text" placeholder="Location">
+              </div>
+            </div>
+            <div class="card-field-three mr-1 pr-2 d-flex align-items-center">
+              <div>
+                <label class="form-label" for="date">When?</label>
+                <input name="date" type="date" class="datepicker form-control" placeholder="Date">
+              </div>
+            </div>
+            <div class="card-field-four d-flex align-items-center pt-2">
+              <button type="submit" class="search-button btn btn-primary mt-3"><i class="fas fa-search"></i></button>
+            </div>
           </div>
-          <div class="pt-1">
-            <label class="form-label" for="date">Date</label>
-            <input name="date" type="date" class="datepicker" />
-          </div>
-          <div class="pt-1">
-            <label class="form-label" for="class">Class</label>
-            <select class="class-form" name="class" type="text">
-              <% Teacher::SPECIALITY.each do |speciality| %>
-                <option value="<%= speciality %>"><%= speciality %></option>
-              <% end %>
-            </select>
-          </div>
-          <input class="mt-3 home-search-button btn btn-primary" name="commit" type="submit" value="Search" data-disable-with="Search" />
         </form>
       </div>
     </div>
@@ -80,10 +90,8 @@
   </div>
 </div>
 
-<div class="footer pt-0">
-  <footer class="page-footer font-small text-light bg-dark pt-2 pb-2">
-    <div class="footer-copyright text-center py-3">© 2020 Copyright, All rights reserved.</div>
+<div class="footer">
+  <footer class="page-footer font-small pt-3 pb-3">
+    <div class="footer-copyright text-center text-light py-3">TeamTime © All rights reserved.</div>
   </footer>
 </div>
-
-<%#= link_to 'Teachers', teachers_path %>

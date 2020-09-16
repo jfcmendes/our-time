@@ -1,12 +1,12 @@
 <div class="container boxes">
   <% @teachers.each do |teacher| %>
     <div class="row justify-content-between">
-      <div class="col-7 card-deck teacher-card" >
+      <div class="col-7 card-deck teacher-card mb-50" >
           <div>
             <div class="row no-gutters">
               <div class="col-md-4">
                 <% if teacher.photo.attached? %>
-                  <%= cl_image_tag teacher.photo.key, class: "teacher-avatar" %>
+                  <%= cl_image_tag teacher.photo.key, crop: :fill, width: 200, height: 200, class: "teacher-avatar img-fluid" %>
                 <% else %>
                   <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
                 <% end %>
@@ -18,19 +18,18 @@
                       <%= speciality %>
                     <% end %>
                   </h5>
-                  <p class="card-text"><%= teacher.description %></p>
+                  <p class="card-text"><%= teacher.description.truncate(200) %></p>
                   <p class="card-text"><small class="text-muted"><p>Rating: <%= teacher.average_rating %></p></small></p>
                 </div>
               </div>
             </div>
-            <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-outline-info" %>
           </div>
       </div>
 
       <div class="col-5 card-deck ninja-card">
         <span class="disabled"></span>
           <% if teacher.photo.attached? %>
-            <%= cl_image_tag teacher.photo.key, class: "teacher-avatar" %>
+            <%= cl_image_tag teacher.photo.key, crop: :fill, width: 300, height: 200, class: "teacher-avatar img-fluid center" %>
           <% else %>
             <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
           <% end %>
@@ -49,6 +48,10 @@
         <strong>Diplomas</strong>
         <br>
           <%= teacher.diploma %>
+        <br><br>
+        <strong>Additional infos</strong>
+        <br>
+          <%= teacher.additional_informations %>
         <br><br>
         <strong>Price</strong>
         <br>

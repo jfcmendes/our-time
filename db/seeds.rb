@@ -78,7 +78,7 @@ louiseboutin = User.create!(email: "louiseboutin@gmail.com", password: "bonjour"
 
 # TEACHER SEED
 
-louiseteacher = Teacher.create!(user_id: louiseboutin.id, speciality: ["Yoga"], description: "Hello everyone, I am Louise and I come from France. My yoga classes are dynamic, they include 26 postures and 2 breathing exercises. These classes will help you to improve body posture and reduce back pain. I have a Master's degree in Sports and I specialize in the wellness of the muscles. After getting my Master's degree, I crossed over to India to discover the sacred texts from Buddhism that included Yoga, with the objective of ending the trip by spending one year in a Yoga retreat Studio near Mumbai. Now I wanna share this passion with Brazilians. ", max_students: 4,
+louiseteacher = Teacher.create!(user_id: louiseboutin.id, speciality: ["Yoga"], description: "Hello everyone, it's Louise. I teach dynamic yoga, they include postures and breathing exercises. It will help you to improve body posture and reduce back pain as I am specialize in the wellness of the muscles. After having crossed India to discover Yoga, I am now in Brazil ", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km", diploma: "Master Degree of Sport specialized in the wellness of muscle at La Sorbonne, Paris, France",
                   additional_informations: "I can teach in French, English and Portuguese")
                 url = 'https://images.unsplash.com/photo-1573583804458-d4f9be45fd84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80'

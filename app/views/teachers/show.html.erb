@@ -1,37 +1,81 @@
 <div class="container">
-  <div class="row justify-content">
-    <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "square", data: {toggle: "dropdown"} %>
-    <% else %>
-        <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
-    <% end %>
+  <div class="row">
+    <div class="user-show">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <p>USER INFORMATION</p>
+            <h3 class="panel-title"><%= "#{@teacher.user.first_name.capitalize} #{@teacher.user.last_name.capitalize}"%></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 " align="center">
+               <% if current_user.photo.attached? %>
+                  <%= cl_image_tag current_user.photo.key, class: "square", data: {toggle: "dropdown"} %>
+                <% else %>
+                  <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
+                <% end %>
+              </div>
+              <div class=" col-md-9 col-lg-9 ">
+                <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                      <td>E-mail:</td>
+                      <td><%= @teacher.user.email.downcase %></td>
+                    </tr>
+                    <tr>
+                      <td>Gender:</td>
+                      <td><%= @teacher.user.gender %></td>
+                    </tr>
+                    <tr>
+                      <td>Address:</td>
+                      <td><%= @teacher.user.address %></td>
+                    </tr>
+                    <tr>
+                      <td>Phone Number:</td>
+                      <td><%= @teacher.user.phone_number %></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+
+              <p><strong>TEACHER INFORMATION</strong></p>
+
+              <div class=" col-md-9 col-lg-9 ">
+                <table class="table table-user-information">
+                  <p><b>Specialities:</b></p>
+                  <p><% @teacher.speciality.each do |speciality|%>
+                    <li><%= speciality %></li>
+                  <% end %></p>
+                  <tbody>
+                    <tr>
+                      <td>Description</td>
+                      <td><%= @teacher.description %></td>
+                    </tr>
+                    <tr>
+                      <td>Limit of students per class:</td>
+                      <td><%= @teacher.max_students %></td>
+                    </tr>
+                    <tr>
+                      <td>Fixed price:</td>
+                      <td><%= @teacher.price %></td>
+                    </tr>
+                    <tr>
+                      <td>Fee per student in class:</td>
+                      <td><%= @teacher.fee %>,00</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="col justify-content" mt-3>
-    <h2><%= "#{@teacher.user.first_name} #{@teacher.user.last_name}" %></h2>
 
-    <p>PERSONAL</p>
-    <p><b>E-mail:</b> <%= @teacher.user.email.downcase %></p>
-    <p><b>Gender:</b> <%= @teacher.user.gender %></p>
-    <p><b>Location:</b> <%= @teacher.user.address %></p>
 
-    <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
-
-    <p>TEACHING</p>
-    <p><b>Specialities:</b></p>
-
-    <p><% @teacher.speciality.each do |speciality|%>
-      <li><%= speciality %></li>
-    <% end %></p>
-
-    <p><b>Description:</b> <%= @teacher.description %></p>
-    <p><b>Limit of students per class:</b> <%= @teacher.max_students %></p>
-    <p><b>Fixed price:</b> R$ <%= @teacher.price %>,00</p>
-    <p><b>Fee per student in class:</b> R$ <%= @teacher.fee %>,00</p>
-
-    <%= link_to "Edit", edit_teacher_path, class: "btn btn-outline-info" %>
 
     <p><b>Rating:</b> <%= @teacher.average_rating %></p>
 

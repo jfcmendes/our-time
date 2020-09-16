@@ -1,4 +1,4 @@
-<h1>#<%= @chatroom.name %></h1>
+<h3><%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}, #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %></h3>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
@@ -6,6 +6,6 @@
 </div>
 
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-  <%= f.submit "send" %>
+  <%= f.input :content, label: false, placeholder: "Message #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %>
+  <%= f.submit "Send" %>
 <% end %>

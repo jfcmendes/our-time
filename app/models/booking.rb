@@ -5,5 +5,14 @@ class Booking < ApplicationRecord
   has_one :review
 
   validates :day, :hour, :students_number, presence: true
-  # validates :students_number, lenght: { maximum: Teacher.max_students }
+
+  monetize :price_cents
+
+  def date
+    "#{day}#{hour}"
+  end
+
+  def sku
+    "booking-#{id}"
+  end
 end

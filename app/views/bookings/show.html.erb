@@ -1,7 +1,30 @@
-<strong>Date:</strong>
-  <%= @booking.date%>
-<p> <strong>Price:</strong>
-  <%= @booking.price%>
-</p>
+<h2><%= "Booking ##{@booking.id}"%></h2>
 
-<li>  <%=link_to "Leave a review",  new_booking_review_path(@booking)%></li>
+<p>GENERAL INFORMATION</p>
+
+<p><b>Date:</b> <%= @booking.day %></p>
+<p><b>Hour:</b> <%= @booking.hour %></p>
+<p><b>Number of participants:</b> <%= @booking.students_number %></p>
+<p><b>Price:</b> R$ <%= (@booking.teacher.fee * @booking.students_number) + @booking.teacher.price %>,00</p>
+
+<p>TEACHER INFORMATION</p>
+
+<p><b>Teacher:</b> <%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %></p>
+<p><b>Specialities:</b></p>
+    
+<p><% @booking.teacher.speciality.each do |speciality|%>
+  <li><%= speciality %></li>
+<% end %></p>
+
+<p>Add payment link here</p>
+
+<p><%= link_to "Talk to your coach", booking_chatrooms_path(@booking.id), method: :post %></p>
+
+<p><%= link_to "Leave a review", new_booking_review_path(@booking) %></p>
+
+<p><%= link_to "See all bookings", user_bookings_path %></p>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'booking_id', @booking.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>

@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(version: 2020_09_15_182224) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "teacher_id", null: false
     t.bigint "user_id", null: false
-    t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "day"
     t.string "hour"
     t.integer "students_number"
+    t.integer "price_cents", default: 0, null: false
     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 2020_09_15_182224) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "booking_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -136,6 +149,8 @@ ActiveRecord::Schema.define(version: 2020_09_15_182224) do
   add_foreign_key "chatrooms", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "orders", "bookings"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
   add_foreign_key "teacher_availabilities", "teachers"

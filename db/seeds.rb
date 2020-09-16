@@ -71,5 +71,6 @@ messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: be
 
 # REVIEW SEED
 
-reviewone = Review.create!(booking_id: bookingone.id, user_id: joaofelipe.id, rating: "5", content: "Bérénice has been a wonderful teacher, and helped each of us with care. I recommand her as your teacher!")
+reviewone = Review.create!(booking_id: bookingone.id, user_id: joaofelipe.id, rating: 5, content: "Bérénice has been a wonderful teacher, and helped each of us with care. I recommand her as your teacher!")
 
+reviewtwo = Review.create!(booking_id: bookingtwo.id, user_id: joaofelipe.id, rating: 3, content: "Bianca has been a wonderful teacher, and helped each of us with care. I recommand her as your teacher!")

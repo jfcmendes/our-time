@@ -1,18 +1,21 @@
 class Teacher < ApplicationRecord
   belongs_to :user
-  has_many :reviews
   has_many :teacher_availabilities
 
   has_one_attached :photo
 
   has_many :bookings, dependent: :destroy
-
+  has_many :reviews, through: :bookings
 
   SPECIALITY = ["Yoga", "Meditation", "Sophrology"]
   validates :speciality, :description, :max_students, :price, :fee, :max_distance, presence: true
   # validates :speciality, inclusion: { in: SPECIALITY }
 
   validate :correct_speciality_types
+
+  def average_rating
+    reviews.average(:rating).to_f
+  end
 
   private
 

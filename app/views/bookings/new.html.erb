@@ -24,7 +24,7 @@
               <div class="row">
                 <div class="col">
                   <div class="pb-3">
-                    <%= f.input :students_number %>
+                    <%= f.input :students_number, collection: (1..@teacher.max_students) %>
                   </div>
                 </div>
               </div>

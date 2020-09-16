@@ -2,15 +2,18 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :chatrooms, only: [:index, :show, :new, :create] do
+  resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
+  end
+
+  resources :bookings, only: [:show] do
+    resources :reviews, only: [:new, :create]
+    resources :chatrooms, only: :create
   end
 
   resources :teachers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :teacher_availabilities, only: [:new, :create]
-    resources :bookings, only: [:create, :new, :index, :edit, :update, :show] do
-     resources :reviews, only: [:new, :create]
-    end
+    resources :bookings, only: [:new, :create]
   end
 
   resources :orders, only: [:show, :create] do
@@ -25,7 +28,13 @@ Rails.application.routes.draw do
 
   resources :teacher_availabilities, only: :destroy
 
-  resources :users, only: :show do
-    resources :bookings, only: [:index]
+  resources :users, only: :show
+
+  namespace :user do
+    resources :bookings, only: :index
+  end
+
+  namespace :teacher, as: :t do
+    resources :bookings, only: :index
   end
 end

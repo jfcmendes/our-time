@@ -18,6 +18,7 @@
             <div>
               <span><%= teacher.description %></span>
             </div>
+            <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-outline-info" %>
           </div>
       </div>
 

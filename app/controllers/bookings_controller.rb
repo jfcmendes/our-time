@@ -1,8 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -23,34 +19,15 @@ class BookingsController < ApplicationController
   def create
     @teacher = Teacher.find(params[:teacher_id])
     @booking = Booking.new(booking_params)
+    @booking.teacher = @teacher
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to teacher_booking_path(booking.id)
+      redirect_to booking_path(@booking.id)
     else
       render :new
     end
   end
-
-  # def edit
-  #  @booking = Booking.find(params[:id])
-  # end
-
-  # def update
-  #  @booking = Booking.find(params[:id])
-
-  #  if @booking.update(booking_params)
-  #    redirect_to booking_path(@booking.id), notice: 'Your booking is successfully updated!'
-  #  else
-  #    render :edit
-  #  end
-  # end
-
-  # def destroy
-  #  @booking = Booking.find(params[:id])
-
-  #  @booking.destroy
-  #  redirect_to booking_path, notice: 'Your booking is successfully canceled.'
-  #end
 
   private
 

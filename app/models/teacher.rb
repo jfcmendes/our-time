@@ -5,7 +5,7 @@ class Teacher < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :booking, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
 
   SPECIALITY = ["Yoga", "Meditation", "Sophrology"]

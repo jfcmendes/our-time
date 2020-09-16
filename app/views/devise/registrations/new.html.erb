@@ -30,16 +30,16 @@
                 <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }, placeholder: "Confirm your password" %>
               </div>
               <div class="pb-3">
-                <%= f.input :gender, collection: User::GENDER %>
+                <%= f.input :gender, collection: User::GENDER, prompt: "Select" %>
               </div>
               <div class="pb-3">
-                <%= f.input :document, placeholder: "CPF" %>
+                <%= f.input :document, input_html: { maxlength: 9 }, placeholder: "CPF" %>
               </div>
               <div class="pb-3">
-                <%= f.input :phone_number %>
+                <%= f.input :phone_number, input_html: { maxlength: 15 }, placeholder: "(21) 98888-8888" %>
               </div>
               <div class="pb-3">
-                <%= f.input :address, input_html: {id: "location"} %>
+                <%= f.input :address, label: "Neighbourhood", input_html: {id: "location"}, placeholder: "Botafogo, Rio de Janeiro" %>
               </div>
               <div class="pb-3">
                 <%= f.input :photo, as: :file, placeholder: "Upload your profile picture" %>

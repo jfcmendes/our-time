@@ -1,0 +1,10 @@
+<h2>Your Bookings</h2>
+
+<div class="d-flex">
+  <% current_user.bookings.each do |booking| %>
+    <div class="card">
+      <b><%= link_to "Booking ##{booking.id}", booking_path(booking.id) %></b>
+      <p><%= link_to "Talk to your coach", booking_chatrooms_path(booking.id), method: :post %></p>
+    </div>
+  <% end %>
+</div>

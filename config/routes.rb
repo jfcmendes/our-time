@@ -16,6 +16,14 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
+  resources :orders, only: [:show, :create]
+
+  resources :bookings, only: :show
+
   resources :reviews, only: :destroy
 
   resources :teacher_availabilities, only: :destroy

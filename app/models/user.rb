@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :messages
   has_one :teacher
 
+  has_many :orders
+
   GENDER = ["Female", "Male"]
 
   validates :first_name, :last_name, :document, :phone_number, :address, :gender, presence: true

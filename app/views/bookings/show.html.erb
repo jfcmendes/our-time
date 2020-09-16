@@ -23,3 +23,8 @@
 <p><%= link_to "Leave a review", new_booking_review_path(@booking) %></p>
 
 <p><%= link_to "See all bookings", user_bookings_path %></p>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'booking_id', @booking.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>

@@ -23,9 +23,11 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Gemfile
 gem 'geocoder'
+
+gem 'stripe_event'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'money-rails'
 #cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
@@ -34,6 +36,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+
+gem 'stripe'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

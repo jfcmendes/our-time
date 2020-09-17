@@ -102,8 +102,6 @@
   box-shadow: 0 0 5px rgb(230,230,230);
   margin: 30px 0;
   padding: 36px;
-
-.booking-info {
   p {
     font-size: 13px;
     color: $light-gray;
@@ -116,6 +114,14 @@
     font-size: 12px;
   }
 }
+
+.booking-info {
+  p {
+    font-size: 13px;
+    color: $light-gray;
+    margin-bottom: 6px;
+  }
+}
   
 .payment-card {
   width: 700px;
@@ -126,12 +132,11 @@
   padding: 25px;
   margin-bottom: 50px;
   .btn {
-  margin: 0 auto;
-  font-size: 20px;
+    margin: 0 auto;
+    font-size: 20px;
   }
-}
-
- .payment-text {
-  text-align: center;
-  font-size: 20px;
-}
+  .payment-text {
+    text-align: center;
+    font-size: 20px;
+  }  
+ }

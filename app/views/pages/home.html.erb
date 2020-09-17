@@ -5,23 +5,23 @@
         <h1>Take a break and connect with your teammates</h1>
         <form accept-charset="UTF-8" action="/teachers" method="get">
           <div class="search-card d-flex justify-content-around align-items-center">
-            <div class="card-field-one mr-4 pr-4 d-flex align-items-center">
+            <div class="card-field-one pr-4 d-flex align-items-center justify-content-center">
               <div>
                 <label class="form-label" for="class">Class</label>
-                <select class="form-control" name="class" type="text">
+                <select class="form-control speciality" name="class" type="text">
                   <% Teacher::SPECIALITY.each do |speciality| %>
                     <option value="<%= speciality %>"><%= speciality %></option>
                   <% end %>
                 </select>
               </div>
             </div>
-            <div class="card-field-two mr-4 pr-4 d-flex align-items-center">
+            <div class="card-field-two mr-3 d-flex align-items-center justify-content-center">
               <div>
                 <label class="form-label" for="date">Where?</label>
-                <input class="form-control" id="location" name="location" type="text" placeholder="Location">
+                <input class="form-control location" id="location" name="location" type="text" placeholder="Location">
               </div>
             </div>
-            <div class="card-field-three mr-1 pr-2 d-flex align-items-center">
+            <div class="card-field-three mr-1 pl-2 pr-2 d-flex align-items-center">
               <div>
                 <label class="form-label" for="date">When?</label>
                 <input name="date" type="date" class="datepicker form-control" placeholder="Date">

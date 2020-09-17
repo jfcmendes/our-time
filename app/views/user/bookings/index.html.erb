@@ -1,10 +1,21 @@
-<h2>Your Bookings</h2>
+<div class="container">
+  <h2 class="mt-4 mb-5 text-info">Bookings</h2>
 
-<div class="d-flex">
-  <% current_user.bookings.each do |booking| %>
-    <div class="card">
-      <b><%= link_to "Booking ##{booking.id}", booking_path(booking.id) %></b>
-      <p><%= link_to "Talk to your coach", booking_chatrooms_path(booking.id), method: :post %></p>
-    </div>
-  <% end %>
+  <div class="d-flex row">
+    <% current_user.bookings.each do |booking| %>
+      <div class="booking-index-card mt-3 mr-5">
+        <h5 class="mb-5"><b><%= link_to "Booking ##{booking.id}", booking_path(booking.id) %></b></h5>
+        
+        <p>Date</p>
+        <h6><%= booking.day %></h6>
+        <p>Hour</p>
+        <h6><%= booking.hour %></h6>
+        <p>Teacher</p>
+        <h6><%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %></h6>
+
+        <p><%= link_to "Contact coach", booking_chatrooms_path(booking.id), method: :post, class: "btn btn-outline-info btn-block mt-4" %></p>
+        <p><%= link_to "Leave a review", new_booking_review_path(booking.id), class: "btn btn-primary btn-block" %></p>
+      </div>
+    <% end %>
+  </div>
 </div>

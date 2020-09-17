@@ -77,3 +77,20 @@
 .search-button {
   font-size: 12px;
 }
+
+.booking-card {
+  width: 1000px;
+  height: 480px;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  box-shadow: 0 0 5px $light-gray;
+  padding: 50px;
+}
+
+.booking-info {
+  p {
+    font-size: 14px;
+    color: $light-gray;
+    margin-bottom: 8px;
+  }
+}

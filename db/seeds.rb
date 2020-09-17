@@ -142,7 +142,7 @@ bookingtwo = Booking.create!(user_id: berenicemahe.id, teacher_id: carmenteacher
 
 # MESSAGE SEED
 
-messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: louiseteacher.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
+messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: louiseboutin.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
 
 
 # REVIEW SEED
@@ -150,3 +150,22 @@ messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: lo
 reviewone = Review.create!(booking_id: bookingone.id, user_id: berenicemahe.id, rating: 5, content: "Louise has been a wonderful teacher, and helped each of us with care. I recommand her as your teacher!")
 
 reviewtwo = Review.create!(booking_id: bookingtwo.id, user_id: berenicemahe.id, rating: 4, content: "Saraah is a great, careful and lovely teacher. Her class was really adapted for beginners and she cared about each of us. I will certainly ask her service again")
+
+
+# TEACHER AVAILABILITIES
+
+avone = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "21-09-2020", start_time: "8:00", end_time: "9:00")
+
+avtwo = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "22-09-2020", start_time: "9:00", end_time: "10:00")
+
+avthree = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "23-09-2020", start_time: "10:00", end_time: "11:00")
+
+avfour = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "24-09-2020", start_time: "11:00", end_time: "12:00")
+
+avsix = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "25-09-2020", start_time: "13:00", end_time: "14:00")
+
+avseven = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "26-09-2020", start_time: "14:00", end_time: "15:00")
+
+avseven = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "27-09-2020", start_time: "16:00", end_time: "17:00")
+
+aveight = TeacherAvailability.create!(teacher_id: louiseteacher.id, day: "28-09-2020", start_time: "17:00", end_time: "18:00")

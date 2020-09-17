@@ -3,10 +3,11 @@
 </div>
 
 
-<div class="card-payment">
-  <div class="col">
-    <p>Purchase of <strong><%= @order.booking.teacher.user.first_name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-    <button id="pay" class="btn btn-primary">Pay</button>
+<div class="container d-flex justify-content-center">
+  <div class="payment-card mt-5 p-5">
+    <p class="payment-text"> Purchase of <strong><%= @order.booking.teacher.user.first_name %></strong></p>
+    <p class="payment-text"><strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+    <button id="pay" class="btn btn-primary" style="width: 600px; border-radius: 8px; margin-top: 60px; ">Pay</button>
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>

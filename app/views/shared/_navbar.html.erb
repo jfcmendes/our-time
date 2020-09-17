@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light">
   <div class="navbar-brand d-flex">
-    <%= link_to root_path, class: "navbar-icon" do %>
+    <%= link_to root_path, data: { turbolinks: false }, class: "navbar-icon" do %>
       <%= image_tag "https://i.imgur.com/UxkO9LR.png" %>
     <% end %>
     <h6 class="text-info mt-3 ml-3">Team Time</h6>
@@ -21,7 +21,7 @@
           <%#= link_to "Bookings", t_bookings_path, class: "btn btn-info mr-2" %>
         </li>
         <li class="nav-item">
-          <a class="btn text-secondary" href="/chatrooms" role="button"><i class="fas fa-envelope fa-1x"></i></a>
+          <a class="btn text-secondary" data-turbolinks="false" href="/chatrooms" role="button"><i class="fas fa-envelope fa-1x"></i></a>
         </li>
         <li class="nav-item">
           <a class="btn text-secondary mr-2" href="#" role="button"><i class="fas fa-bell fa-1x"></i></a>

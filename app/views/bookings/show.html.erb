@@ -1,30 +1,58 @@
-<h2><%= "Booking ##{@booking.id}"%></h2>
+<div class="container">
+  <div class="row">
+    <div class="booking-show">
+      <h1 class="margin-bottom-xl"><%= "Booking ##{@booking.id}"%></h1>
+    </div>
+  </div>
+</div>
 
-<p>GENERAL INFORMATION</p>
+<div class="container">
+  <div class="row">
+    <div class="checkout-base">
+      <div>
+        <div class="checkout-summary">
+          <p><strong>GENERAL INFORMATION</strong></p>
+          <p><b>Date:</b> <%= @booking.day %></p>
+          <p><b>Hour:</b> <%= @booking.hour %></p>
+          <p><b>Number of participants:</b> <%= @booking.students_number %></p>
+          <p><b>Price:</b> <%= humanized_money_with_symbol @booking.price %></p>
+          <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'booking_id', @booking.id %>
+            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p><b>Date:</b> <%= @booking.day %></p>
-<p><b>Hour:</b> <%= @booking.hour %></p>
-<p><b>Number of participants:</b> <%= @booking.students_number %></p>
-<p><b>Price:</b> <%= humanized_money_with_symbol @booking.price %></p>
 
-<p>TEACHER INFORMATION</p>
+<div class="container">
+  <div class="row">
+    <div class="checkout-base">
+      <div>
+        <div class="checkout-summary">
+          <p><strong>TEACHER INFORMATION</strong></p>
+          <p><b>Teacher:</b> <%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %></p>
+          <p><b>Specialities:</b></p>
 
-<p><b>Teacher:</b> <%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %></p>
-<p><b>Specialities:</b></p>
-    
-<p><% @booking.teacher.speciality.each do |speciality|%>
-  <li><%= speciality %></li>
-<% end %></p>
+          <p><% @booking.teacher.speciality.each do |speciality|%>
+            <li><%= speciality %></li>
+          <% end %></p>
 
-<p>Add payment link here</p>
+          <p>Add payment link here</p>
 
-<p><%= link_to "Talk to your coach", booking_chatrooms_path(@booking.id), method: :post %></p>
+          <p><%= link_to "Talk to your coach", booking_chatrooms_path(@booking.id), method: :post, class: 'btn btn-primary' %></p>
 
-<p><%= link_to "Leave a review", new_booking_review_path(@booking) %></p>
+          <p><%= link_to "Leave a review", new_booking_review_path(@booking), class: 'btn btn-primary' %></p>
 
-<p><%= link_to "See all bookings", user_bookings_path %></p>
+          <p><%= link_to "See all bookings", user_bookings_path, class: 'btn btn-primary' %></p>
 
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'booking_id', @booking.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

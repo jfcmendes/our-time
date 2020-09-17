@@ -85,12 +85,32 @@
   border-radius: 3px;
   box-shadow: 0 0 5px $light-gray;
   padding: 50px;
+  .booking-info {
+    p {
+      font-size: 14px;
+      color: $light-gray;
+      margin-bottom: 8px;
+    }
+  }
 }
 
-.booking-info {
+.booking-index-card {
+  width: 230px;
+  height: 350px;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  margin: 30px 0;
+  padding: 36px;
   p {
-    font-size: 14px;
+    font-size: 13px;
     color: $light-gray;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 12px;
   }
 }

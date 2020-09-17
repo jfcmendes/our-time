@@ -1,44 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="user-show">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <p>USER INFORMATION</p>
-            <h3 class="panel-title"><%= "#{@teacher.user.first_name.capitalize} #{@teacher.user.last_name.capitalize}"%></h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-3 col-lg-3 " align="center">
-               <% if current_user.photo.attached? %>
-                  <%= cl_image_tag current_user.photo.key, class: "square", data: {toggle: "dropdown"} %>
-                <% else %>
-                  <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
-                <% end %>
-              </div>
-              <div class=" col-md-9 col-lg-9 ">
-                <table class="table table-user-information">
-                  <tbody>
-                    <tr>
-                      <td>E-mail:</td>
-                      <td><%= @teacher.user.email.downcase %></td>
-                    </tr>
-                    <tr>
-                      <td>Gender:</td>
-                      <td><%= @teacher.user.gender %></td>
-                    </tr>
-                    <tr>
-                      <td>Address:</td>
-                      <td><%= @teacher.user.address %></td>
-                    </tr>
-                    <tr>
-                      <td>Phone Number:</td>
-                      <td><%= @teacher.user.phone_number %></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+<div class="card-user">
+  <div class="card-user-left">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "square", data: {toggle: "dropdown"} %>
+    <% else %>
+      <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
+    <% end %>
+    <h4><%= "#{@teacher.user.first_name.capitalize} #{@teacher.user.last_name.capitalize}"%></h4>
+  </div>
 
-              <p><strong>TEACHER INFORMATION</strong></p>
+  <div class="card-user-right">
+    <div class="user-info">
+      <h3>User Information</h3>
+        <div class="info_data">
+          <div class="data">
+            <h4>Email</h4>
+            <p><%= @teacher.user.email.downcase %></p>
+          </div>
+          <div class="data">
+            <h4>Phone</h4>
+            <p><%= @teacher.user.phone_number %></p>
+          </div>
+          <div class="data">
+            <h4>Gender</h4>
+            <p><%= @teacher.user.gender %></p>
+          </div>
+          <div class="data">
+            <h4>Address</h4>
+            <p><%= @teacher.user.address %></p>
+          </div>
+          <%= link_to "Edit", edit_user_registration_path, class: "btn btn-outline-info" %>
+          <p><strong>TEACHER INFORMATION</strong></p>
 
               <div class=" col-md-9 col-lg-9 ">
                 <table class="table table-user-information">
@@ -80,14 +71,9 @@
                   <% end %>
                   </div>
                     <%= link_to "Add new availability", new_teacher_teacher_availability_path(@teacher.id), class: "btn btn-outline-info" %>
-                 </div>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
 
 

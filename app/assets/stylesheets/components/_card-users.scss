@@ -1,0 +1,37 @@
+.card-user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 450px;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.card-user .card-user-right {
+  padding: 50px 35px;
+}
+
+.card-user .card-user-left {
+  width: 35%;
+  background: linear-gradient(to right,#01a9ac,#01dbdf);
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  margin-left: -10px;
+}
+
+
+h4, .h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}

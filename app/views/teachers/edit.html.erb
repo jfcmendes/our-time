@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6 col-md-4 m-3">
-        <h2 class="text-center text-info mb-4">Edit your teaching profile</h2>
+        <h2 class="text-center text-info mb-4">Edit your profile</h2>
         <div class="pb-4">
           <%= f.input :speciality, include_hidden: false, as: :check_boxes, collection: Teacher::SPECIALITY %>
         </div>
@@ -37,7 +37,7 @@
           <%= f.input :photo, as: :file, placeholder: "Upload your profile picture" %>
         </div>
         <div class="pb-5 mb-4">
-          <%= f.submit "Update", class: "btn btn-info btn-block" %>
+          <%= f.submit "Update account", class: "btn btn-primary btn-block" %>
         </div>
       </div>
     </div>

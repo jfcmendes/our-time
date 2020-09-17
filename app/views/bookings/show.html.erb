@@ -11,7 +11,7 @@
 
 <p><b>Teacher:</b> <%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %></p>
 <p><b>Specialities:</b></p>
-    
+
 <p><% @booking.teacher.speciality.each do |speciality|%>
   <li><%= speciality %></li>
 <% end %></p>

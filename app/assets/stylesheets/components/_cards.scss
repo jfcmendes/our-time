@@ -87,6 +87,27 @@
   padding: 50px;
 }
 
+.payment-card {
+  width: 700px;
+  height: 280px;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 8px;
+  box-shadow: 0 0 5px $light-gray;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.payment-text {
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn btn-primary {
+  margin: 0 auto;
+  font-size: 20px;
+
+}
+
 .booking-info {
   p {
     font-size: 14px;

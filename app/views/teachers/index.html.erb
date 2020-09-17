@@ -42,7 +42,8 @@
           <p class="card-text"> <%= teacher.additional_informations %> </p>
           <strong>Price</strong>
           <p class="card-text"> R$<%= teacher.price %> + R$<%= teacher.fee %> per extra student </p>
-          <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-primary btn-block col-md-6 ml-4 mr-4" %>
+          <br>
+          <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-primary col-md-6 ml-4 mr-4" %>
         </div>
       </div>
     </div>

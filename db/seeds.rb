@@ -29,7 +29,7 @@ joaofelipe = User.create!(email: "joaofelipemendes@gmail.com", password: "hellow
 
 berenicemahe = User.create!(email: "berenice.mahe@gmail.com", password: "bonjour", first_name: "Bérénice",
              last_name: "Mahé", document: "01234567901", phone_number:"(21)", address: "Gloria", gender: "Female")
-            url = 'https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'
+            url = 'https://media-exp1.licdn.com/dms/image/C5103AQFviemQg8nznA/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=_RpvVpIV7MPbQbf7R1588QL1uV4ouDtNNNJAz0W0kK8'
             filename = File.basename(URI.parse(url).path)
             file = URI.open(url)
             berenicemahe.photo.attach(io: file, filename: filename)
@@ -142,7 +142,7 @@ bookingtwo = Booking.create!(user_id: berenicemahe.id, teacher_id: carmenteacher
 
 # MESSAGE SEED
 
-messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: berenicemahe.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
+messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: louiseteacher.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
 
 
 # REVIEW SEED

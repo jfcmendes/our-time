@@ -1,11 +1,13 @@
-<h3><%= "#{@chatroom.user.first_name} #{@chatroom.user.last_name}, #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %></h3>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
+<div class="container">
+  <h3><%= "Talk to #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %></h3>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %>
+    <%= f.submit "Send" %>
   <% end %>
 </div>
-
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message #{@chatroom.teacher.user.first_name} #{@chatroom.teacher.user.last_name}" %>
-  <%= f.submit "Send" %>
-<% end %>

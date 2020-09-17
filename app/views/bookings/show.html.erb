@@ -31,10 +31,10 @@
           <%= speciality %> 
         <% end %></b></h6>
 
-        <div class="booking-buttons">
-          <p>Price</p>
-          <h6><b><%= humanized_money_with_symbol @booking.price %></b></h6>
+        <p>Price</p>
+        <h6><b><%= humanized_money_with_symbol @booking.price %></b></h6>
 
+        <div class="booking-buttons">
           <p><%= link_to "Message your coach", booking_chatrooms_path(@booking.id), method: :post, class: "btn btn-outline-info btn-block mt-4" %></p>
 
           <%= form_tag orders_path do %>

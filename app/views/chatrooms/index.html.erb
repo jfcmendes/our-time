@@ -1,24 +1,25 @@
 <%= provide(:turbolinks_cache, 'no-cache') %>
 
 <div class="container boxes">
+  <h2 class="text-primary">Chatrooms</h2>
   <% @chatrooms.each do |chatroom| %>
     <div class="row justify-content-between">
-      <div class= "col-6 card-deck teacher-card h-100">
+      <div class= "col-6 card-deck teacher-card chatroom-card">
         <div class="row no-gutters">
           <div class="col-md-3 image image-chatroom">
             <% if chatroom.teacher.photo.attached? %>
-              <%= cl_image_tag chatroom.teacher.photo.key, crop: :fill, width: 180, height: 180, class: "teacher-avatar img-fluid" %>
+              <%= cl_image_tag chatroom.teacher.photo.key, crop: :fill, width: 80, height: 80, class: "teacher-avatar" %>
             <% else %>
               <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
             <% end %>
           </div>
-          <div class="col-md-9">
-            <div class="card-text pl-5 mt-3 ml-5">
-              <h5><strong><%= "#{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}" %></strong></h5>
-              <small><%= chatroom.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <div class="col-9">
+            <div class="card-text pl-5 pt-2">
+              <h6><strong><%= "#{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}" %></strong></h6>
+              <small class="text-secondary"><%= chatroom.created_at.strftime("%a %b %e at %l:%M%p") %></small>
               <br>
               <% if chatroom.messages.length > 0 %>
-                <small><%= chatroom.messages.last.content %></small>
+                <small><%= chatroom.messages.last.content.truncate(30) %></small>
               <% else %>
                 <small><%= "Send your first message!" %></small>
               <% end %>
@@ -30,16 +31,16 @@
       <div class="col-6 card-deck ninja-card">
         <span class="disabled"></span>
         <div class="col-md-12">
-          <h6><strong><%= "#{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}"%></strong></h6>
-          <div class="messages" data-chatroom-id="<%= chatroom.id %>">
+          <h6 class="pl-3"><strong><%= "#{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}"%></strong></h6>
+          <div class="messages pl-3" data-chatroom-id="<%= chatroom.id %>">
             <% chatroom.messages.each do |message| %>
-              <%= render "messages/message", message: message %>
+              <p><%= render "messages/message", message: message %></p>
             <% end %>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12 mt-4">
             <%= simple_form_for [ chatroom, Message.new ], remote: true do |f| %>
               <%= f.input :content, label: false, placeholder: "Message #{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}" %>
-              <%= f.submit "Send" %>
+              <%= f.submit "Send", class: "btn btn-info" %>
             <% end %>
           </div>
         </div>

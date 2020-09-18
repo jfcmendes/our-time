@@ -25,6 +25,13 @@
     display: none;
 }
 
+.chatroom-card {
+  height: 130px;
+  &:hover {
+    box-shadow: 0 4px 32px rgba(190,212,239,0.6);
+  }
+}
+
 // TEXT
 
 .card-body-chatroom {

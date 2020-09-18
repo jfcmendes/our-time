@@ -13,7 +13,7 @@ OpenURI::Buffer.const_set 'StringMax', 0
 
 biancaferreira = User.create!(first_name: 'Bianca', last_name: 'Ferreira', document: '123456789', phone_number: '00000000',
                 address: 'Rua Retiro dos Artistas', email: 'biancaferreiralp@gmail.com', password: '123456', gender: "Female");
-                url = 'https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'
+                url = 'https://images.pexels.com/photos/4498216/pexels-photo-4498216.jpeg'
                 filename = File.basename(URI.parse(url).path)
                 file = URI.open(url)
                 biancaferreira.photo.attach(io: file, filename: filename)
@@ -78,7 +78,7 @@ louiseboutin = User.create!(email: "louiseboutin@gmail.com", password: "bonjour"
 
 # TEACHER SEED
 
-louiseteacher = Teacher.create!(user_id: louiseboutin.id, speciality: ["Yoga"], description: "Hello everyone, it's Louise. I teach dynamic yoga, they include postures and breathing exercises. It will help you to improve body posture and reduce back pain as I am specialize in the wellness of the muscles. After having crossed India to discover Yoga, I am now in Brazil ", max_students: 4,
+louiseteacher = Teacher.create!(user_id: louiseboutin.id, speciality: ["Yoga"], description: "Hello everyone, it's Louise. I teach dynamic yoga, they include postures and breathing exercises. It will help you to improve body posture and reduce back pain as I am specialize in the wellness of the muscles. After having crossed India to discover Yoga, I am now in Brazil.", max_students: 4,
                   price: 50, fee: 5, max_distance: "10km", diploma: "Master Degree of Sport specialized in the wellness of muscle at La Sorbonne, Paris, France",
                   additional_informations: "I can teach in French, English and Portuguese")
                 url = 'https://images.unsplash.com/photo-1573583804458-d4f9be45fd84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80'
@@ -90,13 +90,13 @@ louiseteacher = Teacher.create!(user_id: louiseboutin.id, speciality: ["Yoga"], 
 biancateacher = Teacher.create!(user_id: biancaferreira.id, speciality: ["Yoga"], description: "After studying yoga in Bali and teaching in several studios across Europe and Costa Rica for 6 years, I am back in my hometown, ready to to share my knowledge with the carioca people.", max_students: 12,
                   price: 70, fee: 5, max_distance: "10km", diploma: "Bali retreat studio diploma",
                   additional_informations: "I can teach in both Portuguese and English. The yoga I teach, is a really calm type of Yoga")
-                url = 'https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'
+                url = 'https://images.pexels.com/photos/4498216/pexels-photo-4498216.jpeg'
                 filename = File.basename(URI.parse(url).path)
                 file = URI.open(url)
                 biancateacher.photo.attach(io: file, filename: filename)
                 biancateacher.save!
 
-joaoteacher = Teacher.create!(user_id: joaofelipe.id, speciality: ["Yoga"], description: "I started my journey around yoga learning massoterapia at IPSB - Institute of Psycho-Structural Balancing (Los Angeles) and then I did the a yoga teaching retreat at Jardim de Aromas (Vale do Matutu) to end up as a teacher at the Shiva Studio (Búzios). I will be happy to teach you my passion!", max_students: 6,
+joaoteacher = Teacher.create!(user_id: joaofelipe.id, speciality: ["Yoga"], description: "I started my journey around yoga learning massoterapia at IPSB - Institute of Psycho-Structural Balancing (Los Angeles) and then I did the a yoga teaching retreat at Jardim de Aromas (Vale do Matutu) to end up as a teacher at the Shiva Studio (Búzios).", max_students: 6,
                   price: 40, fee: 10, max_distance: "5km", diploma: "massoterapia at IPSB school of Los Angeles, and Jardim de Aromas yoga retreat (Vale do Matutu) Brazil. ",
                   additional_informations: "I teach only in Portuguese. I can adapt to beginners as well as professionals.")
                 url = 'https://images.unsplash.com/photo-1586035758264-c5c685f55e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
@@ -114,7 +114,7 @@ saraahteacher = Teacher.create!(user_id: saraahbikai.id, speciality: ["Yoga"], d
                 saraahteacher.photo.attach(io: file, filename: filename)
                 saraahteacher.save!
 
-carmenteacher = Teacher.create!(user_id: carmenmendes.id, speciality: ["Yoga"], description: "Oi! I am Carmen, I am a passionate yoga teacher since over 15 years, it helped be to raise body consciousness and create a symbioze inside myself. I hope you will enjoy having me around to teach you.", max_students: 15,
+carmenteacher = Teacher.create!(user_id: carmenmendes.id, speciality: ["Yoga"], description: "Oi! I am Carmen, I am a passionate yoga teacher for more than 15 years, it helped be to raise body consciousness and create a symbioze inside myself. I hope you will enjoy having me around to teach you.", max_students: 15,
                   price: 50, fee: 10, max_distance: "5km", diploma: "Official Yoga School of Rio de Janeiro",
                   additional_informations: "I am here to share my love for yoga in English, French or Portuguese.")
                 url = 'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'

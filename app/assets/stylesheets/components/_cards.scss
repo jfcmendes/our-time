@@ -115,7 +115,7 @@
   .btn {
     font-size: 12px;
   }
-  .btn:hover {
+  .btn-outline-info:hover {
     color: $light-blue;
     background-color: white;
   }
@@ -132,9 +132,8 @@
 .payment-card {
   width: 700px;
   height: 280px;
-  border: 1px solid rgb(230,230,230);
   border-radius: 8px;
-  box-shadow: 0 0 5px $light-gray;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 25px;
   margin-bottom: 50px;
   .btn {

@@ -81,9 +81,8 @@
 .booking-card {
   width: 1000px;
   height: 480px;
-  border: 1px solid rgb(230,230,230);
   border-radius: 3px;
-  box-shadow: 0 0 5px $light-gray;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 50px;
   .booking-info {
     p {
@@ -92,14 +91,17 @@
       margin-bottom: 8px;
     }
   }
+  a:hover {
+    color: $light-blue;
+    background-color: white;
+  }
 }
 
 .booking-index-card {
   width: 230px;
   height: 350px;
-  border: 1px solid rgb(230,230,230);
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230,230,230);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin: 30px 0;
   padding: 36px;
   p {
@@ -112,6 +114,10 @@
   }
   .btn {
     font-size: 12px;
+  }
+  .btn:hover {
+    color: $light-blue;
+    background-color: white;
   }
 }
 

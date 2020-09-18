@@ -15,14 +15,13 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <div>
-                    <h5><strong><%= "#{teacher.user.first_name} #{teacher.user.last_name}"%></strong> -
-                      <% teacher.speciality.each do |speciality| %>
+                    <h5><strong><%= "#{teacher.user.first_name} #{teacher.user.last_name}"%></strong></h5>
+                    <h6 class="pt-1"><% teacher.speciality.each do |speciality| %>
                         <%= speciality %>
-                      <% end %>
-                    </h5>
-                    <p class="card-text"><%= teacher.description.truncate(275) %></p>
+                      <% end %></h6>
+                    <p class="card-text pt-5"><%= teacher.description.truncate(275) %></p>
 
-                    <div class="d-flex align-items-center justify-content-between mt-5 pt-5">
+                    <div class="d-flex align-items-center justify-content-between mt-2 pt-2">
                       <div>
                         <p class="text-primary pt-5 mt-1"><small><p><i class="fas fa-star"></i> <%= teacher.average_rating %></p></small></p>
                       </div>

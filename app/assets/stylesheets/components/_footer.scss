@@ -1,5 +1,23 @@
 .footer {
-  background: $pink;
+  background: white;
   font-family: $headers-font;
   font-size: 12px;
+  h6 {
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+.brand {
+  width: 300px;
+}
+
+.footer-icon {
+  img {
+    width: 30px;
+  }
+}
+
+a:hover {
+  text-decoration: none;
 }

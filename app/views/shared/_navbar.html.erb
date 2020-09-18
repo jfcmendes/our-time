@@ -21,10 +21,10 @@
           <%#= link_to "Bookings", t_bookings_path, class: "btn btn-info mr-2" %>
         </li>
         <li class="nav-item">
-          <a class="btn text-secondary" data-turbolinks="false" href="/chatrooms" role="button"><i class="fas fa-envelope fa-1x"></i></a>
+          <a class="btn text-info" data-turbolinks="false" href="/chatrooms" role="button"><i class="fas fa-envelope fa-1x"></i></a>
         </li>
         <li class="nav-item">
-          <a class="btn text-secondary mr-2" href="#" role="button"><i class="fas fa-bell fa-1x"></i></a>
+          <a class="btn text-info mr-2" href="#" role="button"><i class="fas fa-bell fa-1x"></i></a>
         </li>
         <li class="nav-item dropdown">
 
@@ -35,7 +35,7 @@
           <% end %>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item mb-0"><%= "Hi, #{current_user.first_name}!" %></p>
+            <!-- <p class="dropdown-item mb-0"><%= "Hi, #{current_user.first_name}!" %></p> -->
             <%= link_to "Profile", user_path(current_user), class: "dropdown-item" unless current_user.teacher.present? %>
             <%= link_to "Profile", teacher_path(current_user.teacher), class: "dropdown-item" if current_user.teacher.present? && current_user.teacher.persisted? %>
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -18,7 +18,7 @@ require("channels")
 
 import "../plugins/flatpickr"
 
-import { teacherCards } from "../channels/hidden_cards_teachers"
+import { initTeacherCards } from "../channels/hidden_cards_teachers"
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -32,6 +32,7 @@ import "bootstrap";
 
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
+  initTeacherCards();
   // Call your functions here, e.g:
    initChatroomCable();
 });

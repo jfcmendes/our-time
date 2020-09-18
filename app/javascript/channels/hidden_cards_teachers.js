@@ -1,9 +1,12 @@
-
-const teacherCards = document.querySelectorAll(".teacher-card")
-  teacherCards.forEach((teacherCard)=>{
-    teacherCard.addEventListener("click", (event)=>{
-      teacherCard.nextElementSibling.classList.toggle("ninja-card")
+const initTeacherCards = () => {
+  const teacherCards = document.querySelectorAll(".teacher-card")
+  if (teacherCards) {
+    teacherCards.forEach((teacherCard)=>{
+      teacherCard.addEventListener("click", (event)=>{
+        teacherCard.nextElementSibling.classList.toggle("ninja-card")
+      })
     })
-  })
+  }
+}
 
-export { teacherCards };
+export { initTeacherCards };

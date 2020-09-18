@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="mt-4 mb-5 text-info">Bookings</h2>
+  <h2 class="mt-4 mb-5 text-primary">Bookings</h2>
 
   <div class="d-flex row justify-content-center">
     <% current_user.bookings.each do |booking| %>
@@ -14,7 +14,7 @@
         <h6 class="text-primary"><%= booking.teacher.user.first_name %> <%= booking.teacher.user.last_name %></h6>
 
         <!-- <p><%= link_to "Contact coach", booking_chatrooms_path(booking.id), method: :post, class: "btn btn-outline-info btn-block mt-4" %></p> -->
-        <p><%= link_to "Contact coach", chatrooms_path, class: "btn btn-outline-info btn-block mt-4" %></p>
+        <p><%= link_to "Contact coach", "/chatrooms", class: "btn btn-outline-info btn-block mt-4" %></p>
         <p><%= link_to "Leave a review", new_booking_review_path(booking.id), class: "btn btn-info btn-block" %></p>
       </div>
     <% end %>

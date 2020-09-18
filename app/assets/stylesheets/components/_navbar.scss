@@ -26,12 +26,17 @@
 }
 
 .navbar .nav-item .signup {
-  background: $blue;
+  background: $light-blue;
   color: white;
   border-radius: 20px;
+  &:hover {
+  background: $light-blue;
+  color: white;
+  }
 }
 
-.navbar .nav-item .btn:hover {
-  background-color: white;
-  color: $light-blue;
+.navbar .avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }

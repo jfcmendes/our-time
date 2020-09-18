@@ -1,46 +1,46 @@
 <div class="container d-flex justify-content-center">
   <div class="booking-card mt-5 p-5">
-    <div class="booking-header text-info d-flex justify-content-between pl-5 pr-5 pt-4">
+    <div class="booking-header text-primary d-flex justify-content-between pl-5 pr-5 pt-4">
       <h4><b><%= "Booking ##{@booking.id}"%></b></h4>
     </div>
 
     <div class="booking-info d-flex justify-content-between pl-5 pr-5 pt-4">
       <div>
         <p>User</p>
-        <h6><b><%= @booking.user.first_name %> <%= @booking.user.last_name %></b></h6>
+        <h6 class="text-primary"><b><%= @booking.user.first_name %> <%= @booking.user.last_name %></b></h6>
 
         <p>Date</p>
-        <h6><b><%= @booking.day %></b></h6>
+        <h6 class="text-primary"><b><%= @booking.day %></b></h6>
 
         <p>Hour</p>
-        <h6><b><%= @booking.hour %></b></h6>
+        <h6 class="text-primary"><b><%= @booking.hour %></b></h6>
 
         <p>Participants</p>
-        <h6><b><%= @booking.students_number %></b></h6>
+        <h6 class="text-primary"><b><%= @booking.students_number %></b></h6>
 
         <p>Location</p>
-        <h6><b><%= @booking.user.address %></b></h6>
+        <h6 class="text-primary"><b><%= @booking.user.address %></b></h6>
       </div>
 
       <div class="pr-5">
         <p>Teacher</p> 
-        <h6><b><%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %>⠀⠀⠀⠀⠀⠀⠀</b></h6>
+        <h6 class="text-primary"><b><%= @booking.teacher.user.first_name %> <%= @booking.teacher.user.last_name %>⠀⠀⠀⠀⠀⠀⠀</b></h6>
         
         <p>Class</p>
-        <h6><b><% @booking.teacher.speciality.each do |speciality| %>
+        <h6 class="text-primary"><b><% @booking.teacher.speciality.each do |speciality| %>
           <%= speciality %> 
         <% end %></b></h6>
 
         <p>Price</p>
-        <h6><b><%= humanized_money_with_symbol @booking.price %></b></h6>
+        <h6 class="text-primary"><b><%= humanized_money_with_symbol @booking.price %></b></h6>
 
         <div class="booking-buttons">
           <!-- <p><%= link_to "Message your coach", booking_chatrooms_path(@booking.id), method: :post, class: "btn btn-outline-info btn-block mt-4" %></p> -->
-          <p><%= link_to "Message your coach", chatrooms_path, class: "btn btn-outline-info btn-block mt-4" %></p>
+          <p><%= link_to "Contact coach", chatrooms_path, class: "btn btn-outline-info btn-block mt-4" %></p>
 
           <%= form_tag orders_path do %>
             <%= hidden_field_tag 'booking_id', @booking.id %>
-            <p><%= submit_tag 'Purchase', class: 'btn btn-primary btn-block' %></p>
+            <p><%= submit_tag 'Purchase', class: 'btn btn-info btn-block' %></p>
           <% end %>
         </div>
       </div>

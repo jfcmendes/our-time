@@ -1,4 +1,5 @@
 <div class="container boxes">
+  <h2 class="text-primary"><b>Teachers</b></h2>
   <% @teachers.each do |teacher| %>
     <div class="row justify-content-between">
       <div class="col-7 card-deck teacher-card mb-50" >
@@ -6,20 +7,30 @@
             <div class="row no-gutters">
               <div class="col-md-4">
                 <% if teacher.photo.attached? %>
-                  <%= cl_image_tag teacher.photo.key, crop: :fill, width: 200, height: 200, class: "teacher-avatar img-fluid" %>
+                  <%= cl_image_tag teacher.photo.key, crop: :fill, width: 200, height: 400, class: "teacher-avatar img-fluid" %>
                 <% else %>
                   <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
                 <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5><strong><%= "#{teacher.user.first_name} #{teacher.user.last_name}"%></strong> -
-                    <% teacher.speciality.each do |speciality| %>
-                      <%= speciality %>
-                    <% end %>
-                  </h5>
-                  <p class="card-text"><%= teacher.description.truncate(275) %></p>
-                  <p class="card-text"><small class="text-muted"><p>Rating: <%= teacher.average_rating %></p></small></p>
+                  <div>
+                    <h5><strong><%= "#{teacher.user.first_name} #{teacher.user.last_name}"%></strong> -
+                      <% teacher.speciality.each do |speciality| %>
+                        <%= speciality %>
+                      <% end %>
+                    </h5>
+                    <p class="card-text"><%= teacher.description.truncate(275) %></p>
+
+                    <div class="d-flex align-items-center justify-content-between mt-5 pt-5">
+                      <div>
+                        <p class="text-primary pt-5 mt-1"><small><p><i class="fas fa-star"></i> <%= teacher.average_rating %></p></small></p>
+                      </div>
+                      <div class="mb-0 mt-5">
+                        <p class="btn btn-outline-info">See More</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -28,22 +39,19 @@
 
       <div class="col-5 card-deck ninja-card">
         <span class="disabled"></span>
-        <div class="col-md-12">
-          <h5><strong><%= "#{teacher.user.first_name} #{teacher.user.last_name}"%></strong> -
-            <% teacher.speciality.each do |speciality| %>
-              <%= speciality %>
-            <% end %>
-          </h5>
-        </div>
         <div class="card-body">
-          <strong>Diplomas</strong>
-          <p class="card-text"> <%= teacher.diploma %> </p>
-          <strong>Additional infos</strong>
-          <p class="card-text"> <%= teacher.additional_informations %> </p>
-          <strong>Price</strong>
-          <p class="card-text"> R$<%= teacher.price %> + R$<%= teacher.fee %> per extra student </p>
+          <h5><strong>More about <%= "#{teacher.user.first_name}" %></strong></h5>
+
+          <p class="text-secondary mb-1 mt-3"><small>Diplomas</small></p>
+          <p class="mb-2"><%= teacher.diploma %></p>
+
+          <p class="text-secondary mb-1"><small>Additional infos</small></p>
+          <p class="mb-2"><%= teacher.additional_informations %></p>
+
+          <p class="text-secondary mb-1"><small>Price</small></p>
+          <p class="mb-2">USD <%= teacher.price %>,00 + USD <%= teacher.fee %>,00 per student</p>
           <br>
-          <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-primary col-md-6 ml-4 mr-4" %>
+          <%= link_to "Book Now", new_teacher_booking_path(teacher.id), class: "btn btn-info btn-block" %>
         </div>
       </div>
     </div>

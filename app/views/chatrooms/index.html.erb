@@ -7,13 +7,13 @@
         <div class="row no-gutters">
           <div class="col-md-3 image image-chatroom">
             <% if chatroom.teacher.photo.attached? %>
-              <%= cl_image_tag chatroom.teacher.photo.key, crop: :fill, width: 180, height: 180, class: "teacher-avatar img-fluid" %>
+              <%= cl_image_tag chatroom.teacher.photo.key, crop: :fill, width: 80, height: 80, class: "teacher-avatar" %>
             <% else %>
               <i class="fas fa-user-circle fa-2x avatar text-secondary" data-toggle="dropdown"></i>
             <% end %>
           </div>
-          <div class="col-md-9">
-            <div class="card-text pl-2 pt-2">
+          <div class="col-9">
+            <div class="card-text pl-5 pt-2">
               <h6><strong><%= "#{chatroom.teacher.user.first_name} #{chatroom.teacher.user.last_name}" %></strong></h6>
               <small class="text-secondary"><%= chatroom.created_at.strftime("%a %b %e at %l:%M%p") %></small>
               <br>

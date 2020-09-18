@@ -28,25 +28,25 @@
 }
 
 .search-card {
-  width: 500px;
+  width: 460px;
   height: 100px;
   border-radius: 3px;
   padding: 20px;
-  border: 1px solid $light-blue;
+  border: 1px solid $light-gray;
   margin: 30px 0;
   .card-field-one {
     font-size: 12px;
     width: 40%;
     height: 80px;
     line-height: 16px;
-    border-right: 1px solid $light-blue;
+    border-right: 1px solid $light-gray;
   }
   .card-field-two {
     font-size: 12px;
     width: 90%;
     height: 80px;
     line-height: 16px;
-    border-right: 1px solid $light-blue;
+    border-right: 1px solid $light-gray;
   }
   .card-field-three {
     font-size: 12px;

@@ -1,21 +1,35 @@
-<div class="banner-checkout">
-  <h1>Order Completed</h1>
-</div>
-
 <div class="container d-flex justify-content-center">
   <div class="payment-card mt-5 p-5">
-    <div class="container">
-      <div class="row py-4">
-        <div class="col">
-          <h1>Order #<%= @order.id %> <small><span class="badge badge-primary">Paid</span></small></h1>
-          <ul class="list-unstyled">
-            <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-            <li><strong>BOOKING</strong> <%= @order.booking.teacher.user.first_name %> [<%= @order.booking_sku %>]</li>
-            <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-            </li>
-          </ul>
-        </div>
+    <h3 class="text-primary mb-3 ml-5 mt-2"><b>Order #<%= @order.id %></b></h3>
+    <h4><span class="badge badge-primary pt-2 ml-5 mb-2">Paid</span></h4>
+
+    <div class="booking-info d-flex justify-content-between pl-5 pr-5 pt-4">
+      <div>
+        <p>User</p>
+        <h6 class="text-primary"><b><%= @order.booking.user.first_name %> <%= @order.booking.user.last_name %></b></h6>
+
+        <p>Date</p>
+        <h6 class="text-primary"><b><%= @order.booking.day %></b></h6>
+
+        <p>Location</p>
+        <h6 class="text-primary"><b><%= @order.booking.user.address %></b></h6>
       </div>
+
+      <div class="pr-5">
+        <p>Teacher</p> 
+        <h6 class="text-primary"><b><%= @order.booking.teacher.user.first_name %> <%= @order.booking.teacher.user.last_name %></b></h6>
+        
+        <p>Class</p>
+        <h6 class="text-primary"><b><% @order.booking.teacher.speciality.each do |speciality| %>
+          <%= speciality %> 
+        <% end %></b></h6>
+
+        <p>Price</p>
+        <h6 class="text-primary"><b><%= humanized_money_with_symbol @order.booking.price %></b></h6>
+      </div>
+    </div>
+    <div class="booking-buttons d-flex justify-content-center">
+      <%= link_to "Homepage", root_path, class: "btn btn-info btn-block mt-5" %>
     </div>
   </div>
 </div>

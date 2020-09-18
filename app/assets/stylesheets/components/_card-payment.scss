@@ -1,8 +1,7 @@
-.card-payment {
+/* .card-payment {
   margin: 0 auto;
   background-color: #CCE8F3;
   padding: 2rem;
-  text-align: center;
   z-index  : -1;
   bottom   : 15px;
   width    : 50%;
@@ -11,13 +10,12 @@
   box-shadow: 0px 13px 10px black;
   margin-top: 30px;
   margin-left: 30px;
+} */
 
+.payment-card {
+  height: 450px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  .btn {
+    font-size: 16px;
+  }
 }
-
-.banner-checkout {
-  background-color: rgba(69,90,100,.08);
-  margin-top: 25px;
-  margin-left: 25px;
-  border-radius: 10px;
-}
-

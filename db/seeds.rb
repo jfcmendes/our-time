@@ -142,8 +142,9 @@ bookingtwo = Booking.create!(user_id: berenicemahe.id, teacher_id: carmenteacher
 
 # MESSAGE SEED
 
-messagefrombookingone = Message.create!(chatroom_id: chatroomone.id, user_id: louiseboutin.id, content: "Hello, I am the teacher for your class of next week, have you got some question about anything?")
+messagefrombookingtwo = Message.create!(chatroom_id: chatroomtwo.id, user_id: berenicemahe.id, content: "Thank you again for the class, everybody loved it!")
 
+messagefrombookingtwo = Message.create!(chatroom_id: chatroomthree.id, user_id: carmenmendes.id, content: "Ok, I see you in an hour!")
 
 # REVIEW SEED
 
